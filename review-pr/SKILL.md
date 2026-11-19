@@ -97,15 +97,8 @@ time.
 
 One candidate at a time, most consequential first. For each:
 
-- Say the file and the exact line range it will anchor to, then give the body
-  twice: once rendered so it reads at the chat's width, then verbatim in a
-  fenced block to copy from. A fenced block alone doesn't wrap, so a long line
-  is unreadable. The user is approving text that lands publicly under their
-  name.
-- The rendered version keeps the body's own paragraph and bullet breaks.
-  Reflowing it into one block is as hard to read as the unwrapped fence.
-- Render it as plain paragraphs, not a blockquote. The chat collapses the blank
-  lines inside a `>` block, which loses those breaks again.
+- Say the file and the exact line range it will anchor to, then show the body
+  as [shared/public-text.md](../shared/public-text.md) sets out.
 - Wait. They may take it, reword it, downgrade it to a nit, or drop it.
 - Add it to the pending review as soon as they agree, then move to the next.
 
@@ -133,8 +126,6 @@ One candidate at a time, most consequential first. For each:
 - Cite a precedent by naming it, never by quoting it. A pasted `AGENTS.md`
   paragraph is fluff (the author can read the file, and the rule is the
   authority whether or not it's reproduced).
-- Neutral register: this is someone's work to their face. No praise sandwich, no
-  hedging, no narrating the diff back.
 
 **Anchoring**
 
@@ -197,8 +188,9 @@ out.
 
 ### 6. Submit as request changes
 
-- Draft the summary and show it before submitting. Wait for the go-ahead
-  (submitting is public and can't be withdrawn).
+- Draft the summary and show it before submitting, as
+  [shared/public-text.md](../shared/public-text.md) sets out. Wait for the
+  go-ahead (submitting is public and can't be withdrawn).
 - The summary is the verdict: what state the branch is in, what the blockers
   are, and what a next pass needs to cover. The comments carry the detail, so
   don't restate them.

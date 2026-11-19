@@ -190,11 +190,10 @@ fix is committed.
 - Open a follow-up issue for each point moved to one, with the `open-issue`
   skill ([open-issue/SKILL.md](../open-issue/SKILL.md)).
 - Draft a reply per point: what changed and the commit it landed in, or why it
-  was declined or moved to an issue (with the link). A couple of sentences,
-  neutral register, no thanks preamble. Show each rendered as plain paragraphs
-  and then verbatim in a fenced block, since replies land publicly under the
-  user's name. A reply citing a commit only makes sense once it's pushed, so
-  post them after the push.
+  was declined or moved to an issue (with the link), in a couple of sentences.
+  Show each as [shared/public-text.md](../shared/public-text.md) sets out. A
+  reply citing a commit only makes sense once it's pushed, so post them after
+  the push.
 - Post a thread point's reply in its thread, then resolve that thread, whether
   the point was fixed, declined or moved to an issue:
 
