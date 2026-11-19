@@ -43,7 +43,8 @@ and the outstanding-work notice, which comes from the issue.
    ([commit/SKILL.md](../commit/SKILL.md)). Do not continue the write-up until they
    answer (either commit first, or they say to proceed without).
 4. Gather the diff (see **Source of truth**), and read the issue
-   (`gh issue view`) for its `## Outstanding` section.
+   (`gh issue view`) for its outstanding items, as the `update-issue` skill's
+   **Outstanding** lays them out.
 5. Read enough of it to understand the net end-state change.
 6. Emit the code blocks below, in order, with no other wrapping commentary
    beyond a brief lead-in if needed.
@@ -73,7 +74,7 @@ turns up. Where the issue's plan lists several PRs (`PR1:`, `PR2:`), only the
 last one resolves it. An earlier one puts `Part of #123` there instead, so
 merging it leaves the issue open.
 
-When the issue's `## Outstanding` section holds an item for this PR (on an
+When the issue's outstanding items include one for this PR (on an
 issue spanning several PRs, one starting with the `PR2:` this PR has in the
 plan), open the description with this notice, above the `Resolves` line:
 
@@ -83,8 +84,8 @@ plan), open the description with this notice, above the `Resolves` line:
 ```
 
 Give the notice only, never the items. They stay on the issue, which a long PR
-can't bury, so there's one list to keep current. Leave the notice out once the
-section holds nothing for this PR.
+can't bury, so there's one list to keep current. Leave the notice out once
+nothing outstanding is for this PR.
 
 **Lead** - one sentence, no heading, sitting directly under `## AI Summary`.
 What the branch changes. It has to stand alone, because it's what gets read in a

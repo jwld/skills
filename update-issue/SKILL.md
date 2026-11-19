@@ -112,6 +112,26 @@ owed. Keep the rest word for word. Drop a group's link with its last item, and
 the heading with the last item of all. Work that can wait until after the PR
 it touches merges is a new issue, not an item here.
 
+### Someone else's issue
+
+An issue is someone else's when its author isn't the current login
+(`gh issue view --json author`, against `gh api user --jq .login`). Its title
+and body stay theirs: keep them word for word, under their headings and in
+their voice, and leave its assignees alone. The write-up goes in a section of
+its own at the end of the body, below a rule:
+
+```
+---
+
+## Agent write-up
+```
+
+Under it goes the **Write-up** above, without `## Problem` (their body already
+says why), and with each heading one level down (`### Outstanding`,
+`### Flow`, `### Plan`). Later edits rewrite only the agent write-up. Where
+their text says something the work has made untrue, say so there rather than
+editing theirs.
+
 ## Workflow
 
 ```
@@ -134,11 +154,11 @@ do not open one here. A PR without one gets it from the `open-pr` skill's
 
 ### 2. Check it against the work
 
-Read the issue with `gh issue view`. Hold it to **Write-up** above, or to its
-own format where someone else wrote it (see step 3).
+Read the issue with `gh issue view`. Hold it to **Write-up** above. On
+someone else's issue, hold only its agent write-up to it.
 
 - `## Problem` comes first, carried over word for word.
-- Every `## Outstanding` item the branch now does is removed.
+- Every outstanding item the branch now does is removed.
 - The lead and its bullets still name the work as it stands, not the plan it
   started as, and the bullets cover every part of the problem.
 - Several PRs have a checkbox each, and one PR has none. A checklist of
@@ -152,18 +172,13 @@ own format where someone else wrote it (see step 3).
 
 ### 3. Edit when it isn't in sync
 
-- Keep an issue someone else wrote (`gh issue view --json author`, against
-  `gh api user --jq .login`) in its author's format rather than **Write-up**
-  above. Correct what the work has made untrue, and extend a section that
-  tracks the work (a commit list) to cover it, under their headings and in
-  their voice. Keep everything still true word for word, and leave its
-  assignees alone.
 - Leave the existing title and body when they already match.
 - When they don't, `gh issue edit --title "..." --body-file -`, passing the
   body as [shared/gh-body.md](../shared/gh-body.md) sets out. Rewrite the whole
   body, so a stale sentence cannot linger under a patched heading, but keep the
-  problem and the outstanding items still owed word for word.
-- Assign it as the `open-issue` skill's **Assignee** section decides
-  ([open-issue/SKILL.md](../open-issue/SKILL.md)), with
+  problem and the outstanding items still owed word for word. On someone
+  else's issue, rewrite only the agent write-up, and leave the title alone.
+- On your own issue, assign it as the `open-issue` skill's **Assignee**
+  section decides ([open-issue/SKILL.md](../open-issue/SKILL.md)), with
   `gh issue edit --add-assignee @me`.
 - Say whether the issue changed. No recap of the write-up.

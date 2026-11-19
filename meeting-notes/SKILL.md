@@ -85,16 +85,11 @@ sentence or two, written in full lines rather than wrapped.
 
 ### 4. Add the items to the issue's outstanding work
 
-Edit a body only when it's yours: its last editor, or its author where nobody
-has edited it, is the current `gh api user` login. Check each issue and PR on
-its own (`gh api graphql` for `author { login }` and `editor { login }`), since
-one person can own an issue while someone else last edited its PR. Treat anyone
-else as the owner and leave their body alone, so their issue gets the comment
-alone and their PR isn't flagged.
-
-List the comment's items in the issue's `## Outstanding` section, laid out as
-the `update-issue` skill's **Outstanding** sets out: the comment linked, then
-one unticked checkbox per item, a line each.
+List the comment's items in the issue's outstanding section, laid out as the
+`update-issue` skill's **Outstanding** sets out: the comment linked, then one
+unticked checkbox per item, a line each. On an issue someone else wrote, that
+section sits in the agent write-up, as `update-issue`'s **Someone else's
+issue** sets out, and the rest of their body stays as it is.
 
 Add to the section when it already exists. Write the whole body back with
 `gh issue edit <number> --body-file -`, built from the current body so nothing
@@ -102,12 +97,16 @@ else changes.
 
 ### 5. Flag them on the PR
 
-Where the issue has an open PR the items block, and step 4's ownership check
-lets you edit it, give its description the
+Where the issue has an open PR the items block, give its description the
 outstanding-work notice the `write-up-branch` skill sets out
-([write-up-branch/SKILL.md](../write-up-branch/SKILL.md)), unless it's already there. Write
-the whole body back with `gh pr edit <number> --body-file -`, built from the
-current body so nothing else changes.
+([write-up-branch/SKILL.md](../write-up-branch/SKILL.md)), unless it's already
+there. Write the whole body back with `gh pr edit <number> --body-file -`,
+built from the current body so nothing else changes.
+
+Edit the description only when it's yours: its last editor, or its author
+where nobody has edited it, is the current `gh api user` login
+(`gh api graphql` for `author { login }` and `editor { login }`). Leave anyone
+else's PR unflagged.
 
 ### 6. Open an issue for new work
 
