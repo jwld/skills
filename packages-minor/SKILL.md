@@ -100,9 +100,7 @@ Don't list bumped packages as bullets; the diff has them.
 ### 7. Open the PR
 
 Follow the `open-pr` skill ([open-pr/SKILL.md](../open-pr/SKILL.md)) from its
-step 3. Its step 1 is already answered: **does not need review**, so the
-write-up audience is historical reference and the PR gets the
-`[PR] ready for merge` label.
+step 3. Its step 1 is already answered: **Ready for merge**.
 
 The description carries what the diff can't: any package pinned back and why,
 and any code that had to adapt.
