@@ -58,6 +58,19 @@ Two ways in:
 - Delete a doc that has stopped carrying meaning, and the pointers to it,
   rather than leaving a stub.
 
+## New patterns
+
+A way of doing something the work introduced, documented nowhere yet, where
+one call site is not enough for the next author to infer a rule from:
+
+- Write it down as the rule to follow, so the work that comes after it matches
+  rather than guessing.
+- End the rule with `_(inconsistent)_` when the code doesn't yet follow it
+  everywhere. Say where the code that predates it now diverges, and leave
+  that code as it is. Bringing the rest of the repo up to date is a separate
+  PR, not this branch's to carry. Drop the tag once the last of them is
+  converted.
+
 ## Where it goes
 
 - The root `AGENTS.md` loads on every request, so it holds only what applies

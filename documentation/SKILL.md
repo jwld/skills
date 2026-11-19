@@ -78,7 +78,8 @@ agent writing this kind of code writes the user's version first time.
 - For each, find what should have steered the author: the `AGENTS.md` files
   from the edited file's folder up to the root, and the docs they point at.
   Then take whichever case fits:
-  - **Nothing states it** - write the rule, as **New patterns** sets out.
+  - **Nothing states it** - write the rule, as `review-docs`' **New patterns**
+    sets out.
   - **A doc states it, out of reach** - it doesn't load for that file, or sits
     behind a pointer that wouldn't fire. Move it or sharpen the pointer, as
     `review-docs`' **Where it goes** sets out, rather than adding a second copy.
@@ -91,19 +92,6 @@ agent writing this kind of code writes the user's version first time.
   correction is a convention or a one-off, ask the user rather than guess.
 
 Done when every correction of how the code is written has one of those cases.
-
-## New patterns
-
-A way of doing something the branch introduced is documented nowhere yet, and
-one call site is not enough for the next author to infer a rule from:
-
-- Write it down as the rule to follow, so the work that comes after it matches
-  rather than guessing.
-- End the rule with `_(inconsistent)_` when the code doesn't yet follow it
-  everywhere. Say where the code that predates it now diverges, and leave
-  that code as it is. Bringing the rest of the repo up to date is a separate
-  PR, not this branch's to carry. Drop the tag once the last of them is
-  converted.
 
 ## Output
 
