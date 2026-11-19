@@ -81,31 +81,23 @@ the repo.
 
 ### 2. Ask whether to open an issue
 
-Ask with `AskQuestion` before any code is written, every time. Lead with the
-option [shared/issue.md](../shared/issue.md) would pick, marked `(Recommended)`.
-An issue is the visible record of a plan that otherwise lives only in a
-local file. Where one for this work already exists, use it instead of
-asking: keep its problem and write its plan, and assign it to the user
+Settle the issue before any code is written. Where one for this work already
+exists, use it: keep its problem and write its plan, and assign it to the user
 (`gh issue edit <number> --add-assignee @me`) when they aren't on it already,
-one issue as much as several.
+one issue as much as several. Otherwise ask with `AskQuestion` whether to open
+one, leading with the option [shared/issue.md](../shared/issue.md) would pick,
+marked `(Recommended)`. An issue is the visible record of a plan that
+otherwise lives only in a local file.
 
 Skip the `update-issue` call in step 7 when the answer is no, or when an
-existing issue was reused and step 7 still finds nothing to sync. A one-phase
-completionism change still lands as one commit on `master`.
+existing issue was reused and step 7 still finds nothing to sync.
 
 When opening one, write the title and body as the `update-issue` skill
-specifies ([update-issue/SKILL.md](../update-issue/SKILL.md)). The issue gives what the
-work delivers and the PRs it ships in, with its plan bullets grouped under a
-numbered phase each rather than listed flat, kept short enough for someone not
-on the PR to read the shape of the work at a glance. The file-by-file detail
-stays in the plan file and lands in the PR write-up.
-
-Open it with the `open-issue` skill ([open-issue/SKILL.md](../open-issue/SKILL.md)),
-which sets the type, labels and assignee.
-
-One issue can carry work spanning several PRs, so only the last PR in its plan
-resolves it. Give the number to `write-up-branch` for `Resolves #123`
-on that final PR, and `Part of #123` on the earlier ones.
+specifies ([update-issue/SKILL.md](../update-issue/SKILL.md)), its plan in
+that skill's **Phases** layout. The file-by-file detail stays in the plan file
+and lands in the PR write-up. Open it with the `open-issue` skill
+([open-issue/SKILL.md](../open-issue/SKILL.md)), which sets the type, labels
+and assignee.
 
 ### 3. Leave plan mode, and open a branch
 
