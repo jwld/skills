@@ -23,7 +23,8 @@ leaves explaining the code to whatever comes next.
 
 ## Output
 
-Prose in complete sentences. No bullet list of paths.
+Prose in complete sentences, laid out as
+[shared/output.md](../shared/output.md) sets out. No bullet list of paths.
 
 **Lead** - one short paragraph naming the PR as a link, the base branch, and the
 scale of the change. Say what the branch does in a sentence.
@@ -45,8 +46,3 @@ explain an area here.
 - Say so when the balance is surprising: the headline feature turning out to be
   the smallest area, or most of the diff sitting in something the PR description
   never mentions.
-
-## Rules
-
-- Claim only what the diff shows.
-- No hard-wrapped lines, and short hyphens rather than em dashes.

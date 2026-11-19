@@ -33,9 +33,7 @@ Gather the diff as [shared/net-diff.md](../shared/net-diff.md) sets out.
 - No inline file/function name lists, though naming one component or package is
   fine. Where several sites share a pattern, exemplify rather than enumerate
   ("services like OSRM and VROOM", not all of them)
-- No hard-wrapped lines
-- No redundant blank lines
-- Short hyphens instead of em/en dashes
+- Laid out as [shared/output.md](../shared/output.md) sets out
 
 ## Content
 

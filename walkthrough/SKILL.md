@@ -96,4 +96,4 @@ where it's accurate; link to it and add what it doesn't say.
   render rather than the logic it protects, behaviour that's deliberate but
   reads like a bug, a comment carrying a constraint that isn't obvious.
 - Explain a decision once, in the file where it bites.
-- No hard-wrapped lines, and short hyphens rather than em dashes.
+- Laid out as [shared/output.md](../shared/output.md) sets out.

@@ -81,7 +81,7 @@ Rules:
 - Neutral register throughout. It describes someone's work to their face, so say
   what changed rather than that it's now better (no "fixed", "cleaned up",
   "simplified", "improved")
-- No hard-wrapped lines, and short hyphens rather than em dashes
+- Laid out as [shared/output.md](../shared/output.md) sets out
 - Claim only what the diff shows
 
 After the block, outside it:

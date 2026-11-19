@@ -25,9 +25,7 @@ and the outstanding-work notice, which comes from the issue.
 
 ## Shared rules (every output)
 
-- No hard-wrapped lines
-- No redundant blank lines
-- Short hyphens instead of em/en dashes
+- Laid out as [shared/output.md](../shared/output.md) sets out
 - Describe the net diff vs parent. State additions, removals, moves and
   replacements directly; exclude intermediate churn visible only in commits
 - Omit irrelevant negatives
