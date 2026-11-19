@@ -40,10 +40,9 @@ the new branch for its PR.
 - Note its name, its PR (`gh pr view --json number,closingIssuesReferences`),
   and its issue, found as the `update-issue` skill's **Find the issue** sets
   out ([update-issue/SKILL.md](../update-issue/SKILL.md)). Either may not exist.
-- Check `git status`. Commit uncommitted work on the source branch with the
-  `commit` skill ([commit/SKILL.md](../commit/SKILL.md)) before switching
-  branches, without asking. Leave leftover scrap (a stray console log)
-  uncommitted and say so.
+- Before switching branches, deal with uncommitted work on the source branch
+  as [shared/uncommitted.md](../shared/uncommitted.md)'s **Commit it** sets
+  out.
 
 ### 2. Pin down the piece
 

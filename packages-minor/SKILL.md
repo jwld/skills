@@ -32,10 +32,11 @@ again for either.
 - Read the root `package.json`. It has to have an `updates:minor` script. Stop
   and say so if it doesn't. Use its `packageManager` field for every command
   below.
-- `git status` has to be clean. Uncommitted work gets committed (`commit` skill,
-  [commit/SKILL.md](../commit/SKILL.md)) or stashed first (ask which).
-- Fetch, then start from the remote base (`origin/master`, falling back to
-  `main` or the remote default), so the bump doesn't sit on a stale tree.
+- Deal with uncommitted work as
+  [shared/uncommitted.md](../shared/uncommitted.md)'s **Commit or stash** sets
+  out.
+- Start from the default branch, as
+  [shared/base-branch.md](../shared/base-branch.md) sets out.
 
 ### 2. Branch
 

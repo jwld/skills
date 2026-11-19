@@ -52,9 +52,8 @@ later stages of review, so they map to human review as well.
 
 ### 2. Commit any uncommitted work
 
-Check `git status`. If there is uncommitted work, commit it with the `commit`
-skill ([commit/SKILL.md](../commit/SKILL.md)) before continuing. Do not ask; just
-commit.
+Deal with uncommitted work as [shared/uncommitted.md](../shared/uncommitted.md)'s
+**Commit it** sets out.
 
 ### 3. Find or open the issue
 

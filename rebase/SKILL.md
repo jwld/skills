@@ -32,10 +32,9 @@ consistent with the docs and the code it now sits on top of.
 - A branch whose open PR targets another branch
   (`gh pr view <branch> --json baseRefName,state`), or whose parent the user
   names, is stacked. Rebase the whole stack, as **Stacked branches** sets out.
-- Fetch first and rebase onto the remote ref (`origin/master`), so a stale local
-  base isn't used.
-- Check `git status`. Uncommitted work has to be committed (`commit` skill) or
-  stashed before starting. Ask which rather than deciding.
+- Deal with uncommitted work as
+  [shared/uncommitted.md](../shared/uncommitted.md)'s **Commit or stash** sets
+  out.
 - Record and quote two things before touching anything:
   - `git rev-parse HEAD` - the way back if the rebase goes wrong.
   - `git merge-base HEAD origin/master` - the old fork point, needed in steps 3

@@ -28,10 +28,11 @@ is one item; the branch uses the lead package name.
 
 - Read the root `package.json`. Use its `packageManager` field for every command
   below.
-- `git status` has to be clean. Uncommitted work gets committed (`commit` skill,
-  [commit/SKILL.md](../commit/SKILL.md)) or stashed first (ask which).
-- Fetch, then start from the remote base (`origin/master`, falling back to
-  `main` or the remote default).
+- Deal with uncommitted work as
+  [shared/uncommitted.md](../shared/uncommitted.md)'s **Commit or stash** sets
+  out.
+- Start from the default branch, as
+  [shared/base-branch.md](../shared/base-branch.md) sets out.
 - If the last take's PR is still open, stop and say so: the lockfile will
   collide. Wait until they merge it, or they say to continue anyway.
 

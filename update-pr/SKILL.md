@@ -31,9 +31,8 @@ issue goes first, since the write-up's outstanding-work notice reads it.
   ([shared/base-branch.md](../shared/base-branch.md)). Stop if it is.
 - There must already be a pull request for the branch (`gh pr view`). If there
   isn't, stop and point at the `open-pr` skill. Do not open one.
-- Check `git status`. Commit uncommitted work that looks intentional with the
-  `commit` skill ([commit/SKILL.md](../commit/SKILL.md)). Leave leftover scrap (a
-  stray console log) uncommitted and say so.
+- Deal with uncommitted work as
+  [shared/uncommitted.md](../shared/uncommitted.md)'s **Commit it** sets out.
 - Note what's unpushed (`git log @{u}..HEAD`). A description-only refresh is
   still fine when there's nothing to push.
 

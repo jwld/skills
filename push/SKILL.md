@@ -39,11 +39,8 @@ Check the remote, not the owner or the branch name alone.
 
 ### 2. Commit
 
-Check `git status`. Commit intentional uncommitted work with the `commit` skill
-([commit/SKILL.md](../commit/SKILL.md)). Leave leftover scrap (a stray console
-log) uncommitted and say so.
-
-A clean tree goes straight to the push.
+Deal with uncommitted work as [shared/uncommitted.md](../shared/uncommitted.md)'s
+**Commit it** sets out.
 
 ### 3. Push
 
