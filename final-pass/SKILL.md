@@ -133,10 +133,10 @@ the answer, then move on as the **Sections** in
 - List the findings held for the author, and offer to post them with the
   `review-pr` skill ([review-pr/SKILL.md](../review-pr/SKILL.md)). Its submit step
   writes the summary and hands the PR back to the author.
-- Where nothing was held, in propertywerks, ask whether to label the PR
-  `[PR] ready for merge`. On a yes, and once the pass's fixes are pushed, swap
-  it in for whichever `[PR]` stage label the PR carries, and leave the assignees
-  and reviews alone.
+- Where nothing was held, in propertywerks, ask whether to move the PR to
+  `[PR] ready for merge`. On a yes, and once the pass's fixes are pushed, move
+  it as [shared/pr-labels.md](../shared/pr-labels.md) sets out, and leave the
+  assignees and reviews alone.
 - Where another author wrote the branch, offer to summarise the pass for them
   with the `changes` skill ([changes/SKILL.md](../changes/SKILL.md)). Leave pushing
   to the user.

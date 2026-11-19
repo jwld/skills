@@ -36,19 +36,13 @@ In propertywerks, the PR is ready for merge unless the user said otherwise when
 they called this skill. Do not ask. The repo's `docs/conventions/github.md`
 sets each kind's label, reviewer and assignee.
 
-- **Ready for merge** - the default. Write-up audience is historical reference.
-- **Needs review** - only when they said so. Write-up audience is human review.
-- **In progress** - only when they said so. Write-up audience is historical
-  reference.
+- **Ready for merge** - the default.
+- **Needs review** - only when they said so.
+- **In progress** - only when they said so.
 
-The kind answers step 1 of `write-up-branch`. Do not ask that one. Ready for
-merge and in progress are historical reference.
-
-The mapping reads in reverse too: a PR already carrying one of those labels
-takes its audience from the label, so a later pass over it reads the label
-rather than asking again. `[PR] in review`, `[PR] changes requested`,
-`[PR] needs re-review`, `[PR] needs final pass` and `[PR] in final pass` are
-later stages of review, so they map to human review as well.
+Each kind is a stage label, and its write-up audience is the one
+[shared/pr-labels.md](../shared/pr-labels.md) maps it to. That answers step 1
+of `write-up-branch`, so do not ask that one.
 
 ### 2. Commit any uncommitted work
 

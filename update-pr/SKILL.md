@@ -54,14 +54,13 @@ step ([open-pr/SKILL.md](../open-pr/SKILL.md)). The refreshed write-up gains a
 
 - Read the current title, body, and labels with `gh pr view`.
 - In propertywerks, take the audience from the `[PR]` label the PR carries, as
-  step 1 of `open-pr` ([open-pr/SKILL.md](../open-pr/SKILL.md)) maps them. Don't
-  ask; ask only when the PR carries none of them.
+  [shared/pr-labels.md](../shared/pr-labels.md) maps them. Don't ask; ask only
+  when the PR carries none of them.
 - The exception is a PR labelled `[PR] needs review` and assigned to the user
   (`gh pr view --json assignees`, against `gh api user --jq .login`). Ask with
-  `AskQuestion` whether it's now ready for merge. On a yes, swap the label for
-  `[PR] ready for merge` (`gh pr edit --remove-label "[PR] needs review"
-  --add-label "[PR] ready for merge"`) and write it up for historical
-  reference. On a no, keep the label and the human-review write-up.
+  `AskQuestion` whether it's now ready for merge. On a yes, move it to
+  `[PR] ready for merge` as that fragment sets out, and write it up for
+  historical reference. On a no, keep the label and the human-review write-up.
 - Anywhere else, write-up audience is historical reference.
 - Follow `write-up-branch` from its step 2 onwards, skipping its
   uncommitted-work check. Use its title and description. Do not emit the three

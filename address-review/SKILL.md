@@ -184,12 +184,9 @@ fix is committed.
 
 - Push and refresh the PR write-up and its issue with the `update-pr` skill
   ([update-pr/SKILL.md](../update-pr/SKILL.md)), when the user asks for it.
-- In propertywerks, once the fixes are pushed, swap the label so the reviewer
-  knows the PR is back with them:
-
-  ```bash
-  gh pr edit --add-label "[PR] needs re-review" --remove-label "[PR] changes requested"
-  ```
+- In propertywerks, once the fixes are pushed, move the PR to
+  `[PR] needs re-review` as [shared/pr-labels.md](../shared/pr-labels.md) sets
+  out, so the reviewer knows it's back with them.
 - Open a follow-up issue for each point moved to one, with the `open-issue`
   skill ([open-issue/SKILL.md](../open-issue/SKILL.md)).
 - Draft a reply per point: what changed and the commit it landed in, or why it

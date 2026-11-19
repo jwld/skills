@@ -227,8 +227,9 @@ out.
 - The summary is the verdict: what state the branch is in, what the blockers
   are, and what a next pass needs to cover. The comments carry the detail, so
   don't restate them.
-- Submit, then swap the label and assign the PR back to its author
-  (`author.login` from step 1), removing whoever else is assigned:
+- Submit, then move the PR to `[PR] changes requested` as
+  [shared/pr-labels.md](../shared/pr-labels.md) sets out, and assign it back to
+  its author (`author.login` from step 1), removing whoever else is assigned:
 
 ```bash
 gh api graphql -f query='
@@ -242,9 +243,7 @@ EOF
 ```
 
 ```bash
-gh pr edit \
-  --add-label "[PR] changes requested" --remove-label "[PR] in review" \
-  --add-assignee AUTHOR --remove-assignee OTHER_ASSIGNEES
+gh pr edit --add-assignee AUTHOR --remove-assignee OTHER_ASSIGNEES
 ```
 
 - Reply with the review URL and how many comments it carries.
