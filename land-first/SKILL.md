@@ -92,9 +92,10 @@ splits that into phases:
 
 ### 4. Open the issue
 
-Open it as `phased-implementation`'s **Open the issue** step sets out, before
-anything is carried over. It's work under way, so assign `@me` when one opens.
-Its problem is the one the piece solves, not the source branch's.
+Open it as `phased-implementation`'s **Ask whether to open an issue** step
+sets out, before anything is carried over. It's work under way, so assign
+`@me` when one opens. Its problem is the one the piece solves, not the source
+branch's.
 
 When one opens, title it by the kind of work and what it lands ahead of, rather
 than listing what it touches. TypeScript conversions for the source branch, say,
@@ -103,8 +104,8 @@ converted. Where only one file or concept is converted, name it instead:
 `Convert <it> to TypeScript ahead of <source work>`. `<source work>` is the
 source branch's work in a few words.
 
-When the source branch builds on the piece, put a line under the lead (on the
-issue when there is one, else on the PR in step 8):
+When the source branch builds on the piece, write this line under the issue's
+lead, or on the PR as step 8 sets out when there's no issue:
 
 ```
 In advance of #<number>
@@ -148,14 +149,12 @@ it, or stop.
 
 ### 8. Wrap up and open the PR
 
-Run `phased-implementation`'s **Wrap up** step, opening the PR once the user
-says they're happy and before its `update-issue` call, so the issue's plan can
-link it.
+Run `phased-implementation`'s **Wrap up** step once step 7 passes, opening the
+PR before its `update-issue` call, so the issue's plan can link it.
 
 Open the PR with the `open-pr` skill ([open-pr/SKILL.md](../open-pr/SKILL.md)).
-Above `## AI Summary`, put `Resolves #<new issue>` on its own line when step 4
-opened one, with the `In advance of` line from step 4 under it when that step
-wrote one.
+When step 4 wrote the `In advance of` line for the PR, put it on its own line
+above `## AI Summary`.
 
 ### 9. Stay on the new branch and report
 
