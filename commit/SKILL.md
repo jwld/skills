@@ -18,12 +18,9 @@ before a new idea (**When the user moves on**).
 
 ## Branch
 
-- In the PropertyWerks repo (an `origin` remote of
-  `propertywerks/propertywerks`), never commit on `master`. Switch to a new
-  branch first (`git switch -c`), then commit there.
-- Name that branch with the author's short name as a prefix (`jack/` for jwld),
-  then at most four hyphen-separated words describing the change, not the phase
-  or ticket (`jack/crew-app-imports`, `jack/decouple-next-fonts`).
+- On a protected `master`, as [shared/branch-name.md](../shared/branch-name.md)
+  sets out, switch to a new branch first (`git switch -c`), named as that
+  fragment sets out, then commit there.
 - On any other branch, commit where you are.
 
 ## When the user moves on

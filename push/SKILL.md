@@ -30,12 +30,10 @@ and report that too. Never escalate to `--force`.
 
 ### 1. Check the branch
 
-Stop when the branch is `master` and the remote is
-`propertywerks/propertywerks`. That repo's `master` is protected, so the work
-needs its own branch and a PR (`open-pr` skill,
-[open-pr/SKILL.md](../open-pr/SKILL.md)). Other remotes (`jwld/skills`) can push
-to `master`, as can completionism.
-Check the remote, not the owner or the branch name alone.
+Stop on a protected `master`, as
+[shared/branch-name.md](../shared/branch-name.md) sets out: the work needs its
+own branch and a PR (`open-pr` skill, [open-pr/SKILL.md](../open-pr/SKILL.md)).
+Other remotes (`jwld/skills`, completionism) can push to `master`.
 
 ### 2. Commit
 

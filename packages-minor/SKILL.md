@@ -40,7 +40,8 @@ again for either.
 
 ### 2. Branch
 
-`git switch -c minor-package-updates` off the base, named as
+Branch off the base (`git switch -c <name> origin/<base>`), calling it
+`minor-package-updates` and naming it as
 [shared/branch-name.md](../shared/branch-name.md) sets out.
 
 ### 3. Run the update

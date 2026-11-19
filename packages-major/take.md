@@ -38,7 +38,8 @@ is one item; the branch uses the lead package name.
 
 ### 3. Branch
 
-`git switch -c updates/<package name>` off the base, named as
+Branch off the base (`git switch -c <name> origin/<base>`), calling it
+`updates/<package name>` and naming it as
 [shared/branch-name.md](../shared/branch-name.md) sets out.
 
 ### 4. Bump
