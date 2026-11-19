@@ -15,7 +15,7 @@ reads straight through wins over a compact one that has to be decoded.
 ## Workflow
 
 ```
-- [ ] 1. Fix the chunk
+- [ ] 1. Pin down the chunk
 - [ ] 2. Read what surrounds it
 - [ ] 3. Tidy it
 - [ ] 4. Split and co-locate
@@ -23,7 +23,7 @@ reads straight through wins over a compact one that has to be decoded.
 - [ ] 6. Report
 ```
 
-### 1. Fix the chunk
+### 1. Pin down the chunk
 
 The chunk is whatever the user named: a selection, a function, a file, a
 directory. Ask when that isn't clear rather than picking a scope for them.

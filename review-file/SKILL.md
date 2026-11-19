@@ -15,13 +15,13 @@ waits for the user's go-ahead, and every commit waits for theirs too.
 ## Workflow
 
 ```
-- [ ] 1. Fix the file
+- [ ] 1. Pin down the file
 - [ ] 2. Review it whole
 - [ ] 3. Work the findings
 - [ ] 4. Report
 ```
 
-### 1. Fix the file
+### 1. Pin down the file
 
 The file is the one the user named. Ask when that isn't clear.
 

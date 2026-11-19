@@ -35,14 +35,14 @@ Two ways in:
 ## Workflow
 
 ```
-- [ ] 1. Fix the subject and read the rules
+- [ ] 1. Pin down the subject and read the rules
 - [ ] 2. Map the branches
 - [ ] 3. Write the spec
 - [ ] 4. Verify, coverage included
 - [ ] 5. Report
 ```
 
-### 1. Fix the subject and read the rules
+### 1. Pin down the subject and read the rules
 
 - The subject is the file or function the user named, or the one the work's
   test is for. Ask when that isn't clear.
