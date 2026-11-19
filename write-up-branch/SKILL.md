@@ -214,8 +214,7 @@ four backticks so the inner fence survives.
 
 The squash skill owns the tags, the folding and what earns a line. Follow it
 rather than mirroring every description item, and hold it to that skill's size
-limit (well under ten bullets for a whole feature) however long the
-description above it runs.
+limit however long the description above it runs.
 
 Rules:
 

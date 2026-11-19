@@ -22,8 +22,7 @@ Gather the diff as [shared/net-diff.md](../shared/net-diff.md) sets out.
 2. Gather the diff, and read enough of it to understand the net end-state
    change.
 3. Emit the code block below, with no other wrapping commentary beyond a brief
-   lead-in if needed. Where the PR title already covers the change, say so and
-   emit nothing.
+   lead-in if needed.
 
 ## Message shape
 
