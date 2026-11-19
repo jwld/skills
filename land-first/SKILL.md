@@ -119,9 +119,11 @@ written on the source branch, such as a fix caught in passing.
 Leave plan mode with `SwitchMode`, then branch here rather than as
 `phased-implementation` would:
 
-- `git fetch origin <default>`, then `git switch -c <name> origin/<default>`,
-  the default branch as [shared/base-branch.md](../shared/base-branch.md) sets
-  out.
+- `git fetch origin <default>`, then
+  `git switch --no-track -c <name> origin/<default>`, the default branch as
+  [shared/base-branch.md](../shared/base-branch.md) sets out. Without
+  `--no-track` the new branch tracks `origin/<default>`, so a bare push or pull
+  aims at the default branch.
 - Name it after the piece, as [shared/branch-name.md](../shared/branch-name.md) sets out.
 
 ### 6. Carry the piece over
