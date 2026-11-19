@@ -63,8 +63,8 @@ step ([open-pr/SKILL.md](../open-pr/SKILL.md)). The refreshed write-up gains a
   historical reference. On a no, keep the label and the human-review write-up.
 - Anywhere else, write-up audience is historical reference.
 - Follow `write-up-branch` from its step 2 onwards, skipping its
-  uncommitted-work check. Use its title and description. Do not emit the three
-  write-up code blocks, and do not use the squash output.
+  uncommitted-work check. Use its title and description. Do not emit the
+  write-up code blocks.
 - Hold the title to the net diff on its own, not only the body. A title
   written when the PR opened goes stale once the branch widens (a second fix,
   a migration that grew a cleanup): retitle it to name the whole of the work,

@@ -67,9 +67,8 @@ none turns up. Whether to open one is [shared/issue.md](../shared/issue.md).
 
 Follow `write-up-branch` from its step 2 onwards, skipping its uncommitted-work
 check (already handled above). Use its title and description as the PR title and
-body, with `Resolves #<issue>` (or `Part of #<issue>`) for the issue from step 3
-when there is one. Do not emit the write-up code blocks. The squash message is
-the description's `## Squash message` section, so it needs no output of its own.
+body. The description carries the `Resolves` line for the issue from step 3.
+Do not emit the write-up code blocks.
 
 ### 5. Push and open the PR
 

@@ -1,8 +1,8 @@
 ---
 name: write-up-branch
 description: >-
-  Produce a PR title, AI Summary PR description, and squash commit extended
-  description from the net branch diff vs its parent. Use when the user says
+  Produce a PR title and an AI Summary PR description, squash commit message
+  included, from the net branch diff vs its parent. Use when the user says
   "write up a branch", "write up this branch", or asks for a PR write-up based
   on the current branch.
 ---
@@ -13,9 +13,7 @@ Produce these outputs from the **net git diff vs the parent branch**, each in
 its own markdown code block:
 
 1. Suggested PR title
-2. PR description
-3. Squash commit message (extended description only) - skip when already in
-   the PR description
+2. PR description, ending in the squash commit message
 
 ## Source of truth
 
@@ -233,11 +231,3 @@ Rules:
   would pass six bullets belongs to a feature-sized branch: group it by product
   area (sign-in, checkout, emails), one bullet per area naming the outcome and
   its main pieces, and leave the per-change detail to the diff
-
-## Output 3 - Squash commit message
-
-Skip when the squash message has already been set in the PR description.
-
-Otherwise follow the `squash` skill ([squash/SKILL.md](../squash/SKILL.md)). Reuse
-the diff already gathered above rather than re-running its workflow from
-scratch. Emit its code block as the third output.
