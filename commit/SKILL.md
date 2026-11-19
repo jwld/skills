@@ -85,17 +85,20 @@ of those fail, make a new commit instead.
 ## Passing the message to git
 
 Never write the message with the file-writing tool (that file lands in the
-user's review). Build it inside the commit command instead, so it never exists
-as an edit:
+user's review). Feed it on stdin from a quoted heredoc instead, so it never
+exists as an edit:
 
 ```
-printf '%s\n' "Title line" "" "- first bullet" "- second bullet" > /tmp/commit-msg.txt && git commit -F /tmp/commit-msg.txt && rm /tmp/commit-msg.txt
+git commit -F - <<'EOF'
+Title line
+
+- first bullet
+- second bullet
+EOF
 ```
 
-- Keep `printf` and `rm` in the same call as the commit, so nothing is left
-  behind when the turn ends.
-- Never put a heredoc inside `$(...)`, where the shell misparses an apostrophe
-  in the message.
+- Run the heredoc directly, never inside `$(...)`, where the shell misparses
+  an apostrophe in the message.
 - A single-line message needs none of this (just `git commit -m`).
 
 ## Example
