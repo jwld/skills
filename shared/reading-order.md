@@ -29,8 +29,10 @@ How a review of a branch splits it up and moves through it.
 
 - The sections are the areas from the `orient` skill
   ([orient/SKILL.md](../orient/SKILL.md)). Every path in the diff belongs to
-  exactly one, including the trivial ones. Generated and mechanical churn makes
-  one section that gets acknowledged rather than reviewed.
+  at least one, including the trivial ones. A file serving two areas is split
+  between their sections by line range, and is finished with the last of them.
+  Generated and mechanical churn makes one section that gets acknowledged
+  rather than reviewed.
 - Track the sections with the todo tool. The review is done when every section
   is ticked, not when the findings dry up.
 - Before the first, ask which section to start on with the question tool, as
