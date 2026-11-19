@@ -29,7 +29,7 @@ option. The discussion happens in whatever mode is active, without switching.
 
 The subject is the problem the user wants a pattern for, in their words. Where
 they haven't said what has to stay easy to change, ask that, as a numbered
-choice, and wait for the number.
+choice in the chat ([shared/choices.md](../shared/choices.md)).
 
 ### 2. Read where it has to live
 
@@ -56,22 +56,17 @@ easy to change, and where it gets costly as the second and third case arrive.
 
 ### 4. Discuss the decision
 
-One decision, in one message, and the message is the whole discussion. No
-question tool. The user replies with a number.
+One decision, in one message, and the message is the whole discussion: a
+numbered choice in the chat, as [shared/choices.md](../shared/choices.md) sets
+out.
 
 - The decision, in a sentence.
 - The recommendation, in the next sentence: the option to take, and the reason
   it holds up where the others get costly.
 - The reasoning: what the research found, where a candidate ages badly, and
   what adopting it would take in this repo. The repo's current pattern is not
-  part of that case. Short. On Opus, which runs long, draft it and cut
-  anything the choice doesn't turn on.
-- A numbered list, that option first and marked `(Recommended)`. It is the
-  only numbered thing in the message: the reasoning names each candidate in
-  prose, never as a numbered or bulleted run, or the message reads as twice
-  the options.
-
-Then stop and wait for the number.
+  part of that case. Name each candidate in prose, never as a bulleted run.
+- The numbered options.
 
 ### 5. Implement the chosen pattern
 

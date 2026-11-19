@@ -59,19 +59,13 @@ Plan with the `grill-with-docs` skill from mattpocock/skills, reading it from
 where that isn't installed. Planning is done once the user confirms the shared
 understanding it reaches.
 
-Ask each grill round through the `AskQuestion` tool, one call carrying the
-whole frontier. The grilling skill's prose format is for other callers; here
-the questions go in the tool and the message around it carries the findings
-and the cost of each option.
+Ask each grill round through the question tool, one call carrying the whole
+frontier, as [shared/choices.md](../shared/choices.md) sets out. The grilling
+skill's prose format is for other callers.
 
-- One question per decision, `q1` upwards, with the title as the `prompt`.
-- Lead each question's options with your recommendation, suffixed
-  `(Recommended)`. Recommend the best option on its merits, never the one
-  that changes least. A smaller diff is not a reason to pick it.
-- Every option is an answer the user could actually pick. The tool adds
-  "Other", so leave that hatch to it.
-- Set `allow_multiple` where the answers genuinely combine, such as picking
-  which of several cleanups to take.
+- Give each decision an id from `q1` upwards, with the title as the `prompt`.
+- Recommend the best option on its merits, never the one that changes least.
+  A smaller diff is not a reason to pick it.
 
 Then split the plan into phases. Each phase should be independently reviewable
 and land as its own commit.

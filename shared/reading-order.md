@@ -33,9 +33,9 @@ How a review of a branch splits it up and moves through it.
   one section that gets acknowledged rather than reviewed.
 - Track the sections with the todo tool. The review is done when every section
   is ticked, not when the findings dry up.
-- Before the first, ask which section to start on, offering the sections as
-  options in the order above with your suggestion first and the reason in a
-  clause. Then stop and wait.
+- Before the first, ask which section to start on with the question tool, as
+  [choices.md](choices.md) sets out, offering the sections in the order above
+  with the reason for your suggestion in a clause.
 - After each, tick it off and carry straight on with the next one in order,
   saying which you're moving to. No need to wait for a prompt, and the user can
   redirect.

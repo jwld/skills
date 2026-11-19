@@ -99,10 +99,11 @@ point.
 The list names the points and nothing more: no verdicts or fixes yet. Each one
 is judged when its turn comes, against the code as the earlier points left it.
 
-Where any inclusion, exclusion or merge was a guess, say what made each one a
-guess and why you leaned the way you did, then end that message with a numbered
-choice and wait for the number. One choice per guess, your guess first and
-marked `(Recommended)`. Where nothing was a guess, carry on to the first point.
+Where any inclusion, exclusion or merge was a guess, put it to the user as a
+numbered choice in the chat, as [shared/choices.md](../shared/choices.md) sets
+out: what made each one a guess and why you leaned the way you did, then one
+choice per guess, your guess first. Where nothing was a guess, carry on to the
+first point.
 
 ### 3. State the case, then number the options
 
@@ -110,10 +111,9 @@ Judge this point alone. The next point waits until this one is committed or
 decided against. The fix is discussed only once the user agrees there is
 something to fix.
 
-Never use `AskQuestion`. The case, the verdict and the options are one chat
-message, and a reply is a number. Thinking doesn't count, because the user
-never sees it: if the quote, the verdict and the numbered options are not in
-the chat message, this step was skipped.
+Put the case to the user as a numbered choice in the chat, as
+[shared/choices.md](../shared/choices.md) sets out: if the quote, the verdict
+and the numbered options are not in the chat message, this step was skipped.
 
 **Validity** - before discussing anything, test the point against the code on
 the current head:
@@ -141,11 +141,9 @@ the current head:
    **already addressed**), one code reference to the lines that decide it,
    what you checked, and where you part from the reviewer. About 150 words,
    at most one code block. The user knows the PR, so skip background,
-   narration of the diff, and hedges. On Opus, which runs long, hold to that
-   bound hard: draft, then cut anything the decision doesn't turn on.
+   narration of the diff, and hedges.
 
-Then number how to respond, in the same message, recommendation first and
-marked `(Recommended)`:
+Then number how to respond, in the same message:
 
 1. Fix it as suggested
 2. Fix it another way
