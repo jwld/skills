@@ -30,6 +30,9 @@ fix.
   answers.
 - Once there's nothing left to ask, confirm the fix you'll make and ask for the
   go-ahead. Wait for it, even where the fix looks obvious.
+- A simple fix the user asks for themselves, naming the change ("separate
+  var"), is its own go-ahead. Make it, settling details like a name yourself,
+  rather than presenting it back.
 
 ## Fix it on the go-ahead
 
