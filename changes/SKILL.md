@@ -14,22 +14,23 @@ disable-model-invocation: true
 The user is doing a final pass over work the other author has finished, so their
 commits sit at the end of the branch.
 
-1. `git log --format='%h | %an | %ad | %s' --date=short master..HEAD`, falling
-   back to the repo's default base if there's no `master`.
+1. `git log --format='%h | %an | %ad | %s' --date=short origin/<base>..HEAD`,
+   with the branch's base as [shared/base-branch.md](../shared/base-branch.md)
+   sets out.
 2. The other author's most recent commit is the boundary.
-3. If every commit is the user's, summarise `master...HEAD` and say so. If none
-   are, say so and stop.
+3. If every commit is the user's, summarise `origin/<base>...HEAD` and say so.
+   If none are, say so and stop.
 4. If any of the user's own commits sit below the boundary, the two authors have
    interleaved and the diff below would drop that earlier work. Say so rather
    than summarising as if it were complete.
 
 ## Diff the user's work only
 
-Master merges on the branch would otherwise be attributed to the user, so
-compare against the other author's work with master folded in:
+Base merges on the branch would otherwise be attributed to the user, so
+compare against the other author's work with the base folded in:
 
 ```bash
-git merge-tree --write-tree master <boundary>   # prints a tree oid
+git merge-tree --write-tree origin/<base> <boundary>   # prints a tree oid
 git diff --stat -M <tree> HEAD
 ```
 

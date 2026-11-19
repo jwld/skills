@@ -26,8 +26,9 @@ consistent with the docs and the code it now sits on top of.
 
 ### 1. Confirm the branch and base
 
-- The base is whatever the user named. Default to `master`, falling back to
-  `main` or the remote default when there's no `master`.
+- The base is whatever the user named, else the default branch, as
+  [shared/base-branch.md](../shared/base-branch.md) sets out. Fetch it and
+  rebase onto `origin/<base>`.
 - A branch whose open PR targets another branch
   (`gh pr view <branch> --json baseRefName,state`), or whose parent the user
   names, is stacked. Rebase the whole stack, as **Stacked branches** sets out.

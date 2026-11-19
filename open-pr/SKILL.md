@@ -83,8 +83,8 @@ the description's `## Squash message` section, so it needs no output of its own.
 - Push as the `push` skill's **Which push** section decides
   ([push/SKILL.md](../push/SKILL.md)). A branch being opened as a PR has only
   gained commits, so it takes a plain push.
-- Base is `master`, falling back to `main` or the remote default when there's no
-  `master`.
+- Base is the default branch, as
+  [shared/base-branch.md](../shared/base-branch.md) sets out.
 - If a PR already exists for the branch, stop and say so. Do not open a second
   one, and do not overwrite the existing title or body.
 - Create with `gh pr create`, passing `--title` and the body as
@@ -93,8 +93,8 @@ the description's `## Squash message` section, so it needs no output of its own.
   command below takes the body's heredoc after it.
 
 ```
-gh pr create --base master --title "..." --body-file - <<'EOF'
-gh pr create --base master --title "..." --label "<label>" [--reviewer <login>] [--assignee <login>] --body-file - <<'EOF'
+gh pr create --base <default> --title "..." --body-file - <<'EOF'
+gh pr create --base <default> --title "..." --label "<label>" [--reviewer <login>] [--assignee <login>] --body-file - <<'EOF'
 ```
 
 ### 6. Reply with the URLs

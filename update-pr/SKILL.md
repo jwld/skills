@@ -27,7 +27,8 @@ issue goes first, since the write-up's outstanding-work notice reads it.
 
 ### 1. Confirm the branch and PR
 
-- Current branch must not be `master` or `main`. Stop if it is.
+- Current branch must not be the default branch
+  ([shared/base-branch.md](../shared/base-branch.md)). Stop if it is.
 - There must already be a pull request for the branch (`gh pr view`). If there
   isn't, stop and point at the `open-pr` skill. Do not open one.
 - Check `git status`. Commit uncommitted work that looks intentional with the

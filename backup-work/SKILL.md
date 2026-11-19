@@ -29,9 +29,8 @@ backup stays local.
 The branch to back up is the one the user names, or the checked-out branch
 (`git branch --show-current`) when they name none.
 
-Find the default branch with `git rev-parse --abbrev-ref origin/HEAD` (strip
-`origin/`). Without an origin, it's whichever of `master` or `main` exists.
-Stop and ask when the user names the default branch.
+Find the default branch as [shared/base-branch.md](../shared/base-branch.md)
+sets out. Stop and ask when the user names the default branch.
 
 A named branch that isn't checked out holds only its commits, since
 uncommitted work belongs to the checkout. It skips steps 3 and 4: rename it,

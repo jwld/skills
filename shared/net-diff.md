@@ -14,12 +14,7 @@ git diff --stat origin/<base>...HEAD
 git diff origin/<base>...HEAD
 ```
 
-- `<base>` is the connected PR's `baseRefName` where there is one
-  (`gh pr view --json baseRefName`), and otherwise the repo's default branch
-  (`master`, else `main`).
-- Compare against `origin/<base>`, never the local branch. A local base that
-  hasn't been pulled since something merged puts that merged work in the diff
-  as if this branch made it.
+- `<base>` is the branch's base, as [base-branch.md](base-branch.md) sets out.
 - Net end state only. Intermediate churn doesn't count, so a file added and then
   deleted on the branch is excluded.
 - Read the full diff, not just `--stat`, and keep the per-file counts to hand

@@ -47,8 +47,8 @@ the new branch for its PR.
 
 ### 2. Pin down the piece
 
-Gather `git log --oneline origin/master..HEAD` and the net diff against
-`origin/master`, as [shared/net-diff.md](../shared/net-diff.md) sets out. The piece
+Gather `git log --oneline origin/<default>..HEAD` and the net diff against
+`origin/<default>`, as [shared/net-diff.md](../shared/net-diff.md) sets out. The piece
 ends up as either whole commits or specific hunks.
 
 - **Named** - the piece is the work the user named. Ask when it could cover
@@ -120,8 +120,9 @@ written on the source branch, such as a fix caught in passing.
 Leave plan mode with `SwitchMode`, then branch here rather than as
 `phased-implementation` would:
 
-- `git fetch origin master`, then `git switch -c <name> origin/master`, falling
-  back to `main` or the remote default when there's no `master`.
+- `git fetch origin <default>`, then `git switch -c <name> origin/<default>`,
+  the default branch as [shared/base-branch.md](../shared/base-branch.md) sets
+  out.
 - Name it after the piece, as [shared/branch-name.md](../shared/branch-name.md) sets out.
 
 ### 6. Carry the piece over
