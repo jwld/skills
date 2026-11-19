@@ -29,7 +29,7 @@ is one item; the branch uses the lead package name.
 - Read the root `package.json`. Use its `packageManager` field for every command
   below.
 - `git status` has to be clean. Uncommitted work gets committed (`commit` skill,
-  `~/.cursor/skills/commit/SKILL.md`) or stashed first (ask which).
+  [commit/SKILL.md](../commit/SKILL.md)) or stashed first (ask which).
 - Fetch, then start from the remote base (`origin/master`, falling back to
   `main` or the remote default).
 - If the last take's PR is still open, stop and say so: the lockfile will
@@ -38,7 +38,7 @@ is one item; the branch uses the lead package name.
 ### 3. Branch
 
 `git switch -c updates/<package name>` off the base, named as
-`~/.cursor/skills/shared/branch-name.md` sets out.
+[shared/branch-name.md](../shared/branch-name.md) sets out.
 
 ### 4. Bump
 
@@ -82,7 +82,7 @@ than for the update.
 
 ### 9. Open the PR
 
-Follow the `open-pr` skill (`~/.cursor/skills/open-pr/SKILL.md`), with the bump
+Follow the `open-pr` skill ([open-pr/SKILL.md](../open-pr/SKILL.md)), with the bump
 commit's title as the PR title. The description carries the version change
 (from and to), the breaking changes this major introduces, and for each one why
 this app did or didn't need updating. A hop that spans several majors gets a

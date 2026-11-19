@@ -130,7 +130,7 @@ Look in this order, and stop at the first hit:
 
 Ask when none of those turn one up. Skip this skill when there is no issue;
 do not open one here. A PR without one gets it from the `open-pr` skill's
-**Find or open the issue** step (`~/.cursor/skills/open-pr/SKILL.md`).
+**Find or open the issue** step ([open-pr/SKILL.md](../open-pr/SKILL.md)).
 
 ### 2. Check it against the work
 
@@ -160,10 +160,10 @@ own format where someone else wrote it (see step 3).
   assignees alone.
 - Leave the existing title and body when they already match.
 - When they don't, `gh issue edit --title "..." --body-file -`, passing the
-  body as `~/.cursor/skills/shared/gh-body.md` sets out. Rewrite the whole
+  body as [shared/gh-body.md](../shared/gh-body.md) sets out. Rewrite the whole
   body, so a stale sentence cannot linger under a patched heading, but keep the
   problem and the outstanding items still owed word for word.
 - Assign it as the `open-issue` skill's **Assignee** section decides
-  (`~/.cursor/skills/open-issue/SKILL.md`), with
+  ([open-issue/SKILL.md](../open-issue/SKILL.md)), with
   `gh issue edit --add-assignee @me`.
 - Say whether the issue changed. No recap of the write-up.

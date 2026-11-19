@@ -104,13 +104,13 @@ it.
 
 ### 2. Orient, then section the branch
 
-Follow the `orient` skill (`~/.cursor/skills/orient/SKILL.md`), then split the
+Follow the `orient` skill ([orient/SKILL.md](../orient/SKILL.md)), then split the
 branch into sections and ask where to begin, as the **Sections** in
-`~/.cursor/skills/shared/reading-order.md` set out.
+[shared/reading-order.md](../shared/reading-order.md) set out.
 
 ### 3. Review the section
 
-Run every pass in `~/.cursor/skills/shared/review-passes.md` over the section's
+Run every pass in [shared/review-passes.md](../shared/review-passes.md) over the section's
 files, checks included. An aside stays with the user and never becomes a
 comment.
 
@@ -217,7 +217,7 @@ EOF
 
 ### 5. Next section, back to 3
 
-Move on as the **Sections** in `~/.cursor/skills/shared/reading-order.md` set
+Move on as the **Sections** in [shared/reading-order.md](../shared/reading-order.md) set
 out.
 
 ### 6. Submit as request changes

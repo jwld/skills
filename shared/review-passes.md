@@ -40,7 +40,7 @@ Whether the code sits in the right place and reads like the rest of the repo:
 
 - Placement: a helper, type, constant or hook belongs beside its only consumer,
   or at the lowest level covering all of them, as the `tidy` skill's **Split
-  and co-locate** step sets out (`~/.cursor/skills/tidy/SKILL.md`). That holds
+  and co-locate** step sets out ([tidy/SKILL.md](../tidy/SKILL.md)). That holds
   even where the neighbouring files sit the other way.
 - Splitting: a file doing two jobs, a component carrying unrelated logic inline,
   a module grown past what its name covers. Name what comes out and where it
@@ -56,7 +56,7 @@ Whether the code sits in the right place and reads like the rest of the repo:
   pass-through).
 - Readability: naming and shape, held to the **Naming** and **Shape** rules in
   the `tidy` skill's **Tidy it** step, and comments, held to the
-  `review-comments` skill (`~/.cursor/skills/review-comments/SKILL.md`).
+  `review-comments` skill ([review-comments/SKILL.md](../review-comments/SKILL.md)).
 
 Name the precedent behind every tidiness finding: the sibling that does it the
 other way, the `AGENTS.md` line, or the `tidy` or `review-comments` rule it
@@ -82,7 +82,7 @@ finding; none remain unclassified.
   it.
 - Check whether an apparent inconsistency is the convention elsewhere before
   calling it out.
-- Run the checks in `~/.cursor/skills/shared/verify.md`, the suites covering the
+- Run the checks in [shared/verify.md](verify.md), the suites covering the
   logic under review included: a review judges correctness.
 - Drop anything you can't substantiate instead of hedging it.
 

@@ -45,7 +45,7 @@ names a planning model, wait for that model and plan mode before planning.
 
 When the work is a TypeScript conversion, ask with `AskQuestion` whether to
 deep dive the files being converted first, with the `deep-dive` skill
-(`~/.cursor/skills/deep-dive/SKILL.md`), scoped to those files as they stand
+([deep-dive/SKILL.md](../deep-dive/SKILL.md)), scoped to those files as they stand
 today rather than a branch diff. Its findings are planning input: each becomes
 a question in the grill about what to fix or improve in the conversion.
 
@@ -86,7 +86,7 @@ the repo.
 ### 2. Ask whether to open an issue
 
 Ask with `AskQuestion` before any code is written, every time. Lead with the
-option `~/.cursor/skills/shared/issue.md` would pick, marked `(Recommended)`.
+option [shared/issue.md](../shared/issue.md) would pick, marked `(Recommended)`.
 An issue is the visible record of a plan that otherwise lives only in a
 local file. Where one for this work already exists, use it instead of
 asking: keep its problem and write its plan, and assign it to the user
@@ -98,13 +98,13 @@ existing issue was reused and step 7 still finds nothing to sync. A one-phase
 completionism change still lands as one commit on `master`.
 
 When opening one, write the title and body as the `update-issue` skill
-specifies (`~/.cursor/skills/update-issue/SKILL.md`). The issue gives what the
+specifies ([update-issue/SKILL.md](../update-issue/SKILL.md)). The issue gives what the
 work delivers and the PRs it ships in, with its plan bullets grouped under a
 numbered phase each rather than listed flat, kept short enough for someone not
 on the PR to read the shape of the work at a glance. The file-by-file detail
 stays in the plan file and lands in the PR write-up.
 
-Open it with the `open-issue` skill (`~/.cursor/skills/open-issue/SKILL.md`),
+Open it with the `open-issue` skill ([open-issue/SKILL.md](../open-issue/SKILL.md)),
 which sets the type, labels and assignee.
 
 One issue can carry work spanning several PRs, so only the last PR in its plan
@@ -121,7 +121,7 @@ needs one. Check the remote owner first.
   pushed there. More than one phase gets a new branch.
 
 Branch off `master` unless the work belongs on an existing branch. If that isn't
-obvious, ask. Name a new branch as `~/.cursor/skills/shared/branch-name.md` sets
+obvious, ask. Name a new branch as [shared/branch-name.md](../shared/branch-name.md) sets
 out.
 
 If already on a branch for this work, keep it.
@@ -150,7 +150,7 @@ When a subagent does a job:
 Planning, verification, review and commits all stay on the main model. Judge
 the phase by its diff, not a subagent's summary.
 
-Verify before handing over for review, as `~/.cursor/skills/shared/verify.md`
+Verify before handing over for review, as [shared/verify.md](../shared/verify.md)
 sets out.
 
 ### 5. Stop for review
@@ -170,7 +170,7 @@ Do not commit at this point. The next work is their review, not the next phase.
 ### 6. Commit on go ahead
 
 Once the user gives the go ahead, commit the phase with the `commit` skill
-(`~/.cursor/skills/commit/SKILL.md`).
+([commit/SKILL.md](../commit/SKILL.md)).
 
 After committing on a go ahead, automatically start work on the next phase,
 returning to step 4 without waiting for a further prompt. A bare `/commit` or
@@ -184,6 +184,6 @@ phase is only in the working tree.
 
 Once the last phase is committed, however the commit was asked for (a bare
 `/commit` included), follow the `update-issue` skill
-(`~/.cursor/skills/update-issue/SKILL.md`) in the same turn, without asking,
+([update-issue/SKILL.md](../update-issue/SKILL.md)) in the same turn, without asking,
 so the issue's plan matches how the work turned out. Skip this when there is
 no issue. Then say the work is done and whether the issue changed.

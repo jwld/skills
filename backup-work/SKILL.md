@@ -63,7 +63,7 @@ backup is a snapshot, so scrap and half-done edits go in too, all in one
 commit.
 
 Write the message as the `commit` skill's **Message shape** and **Title** set
-out (`~/.cursor/skills/commit/SKILL.md`). Its one-commit-per-idea rule doesn't
+out ([commit/SKILL.md](../commit/SKILL.md)). Its one-commit-per-idea rule doesn't
 apply here.
 
 Work in progress needn't pass checks: if a hook rejects the commit, commit

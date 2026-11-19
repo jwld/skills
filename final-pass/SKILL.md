@@ -48,13 +48,13 @@ say so and ask whether to pass over it as it stands.
 - Check out the branch if you aren't on it, and pull, so the fixes land on the
   author's latest work.
 - Work from the net diff vs the parent, gathered as
-  `~/.cursor/skills/shared/net-diff.md` sets out, narrowed to the scope.
+  [shared/net-diff.md](../shared/net-diff.md) sets out, narrowed to the scope.
 
 ### 2. Orient, then section the branch
 
-Follow the `orient` skill (`~/.cursor/skills/orient/SKILL.md`), then split the
+Follow the `orient` skill ([orient/SKILL.md](../orient/SKILL.md)), then split the
 scope into sections as the **Sections** in
-`~/.cursor/skills/shared/reading-order.md` set out, in the **Order** there.
+[shared/reading-order.md](../shared/reading-order.md) set out, in the **Order** there.
 Don't ask where to begin: say the order and start on the first section, leaving
 the user to redirect.
 
@@ -67,14 +67,14 @@ sections add up to the list's count, and say the count with the order.
 
 ### 3. Review the section
 
-Run every pass in `~/.cursor/skills/shared/review-passes.md` over the section's
+Run every pass in [shared/review-passes.md](../shared/review-passes.md) over the section's
 files, checks included. A finding in another section's files waits for that
 section's turn. One outside the scope is an aside for the report.
 
 ### 4. Work its phases
 
 Take the section's findings one phase at a time, as
-`~/.cursor/skills/shared/phases.md` sets out.
+[shared/phases.md](../shared/phases.md) sets out.
 
 Close every message from here to the report with where the pass stands, as the
 section and phase numbers alone (`Section 1/8, Phase 2/5`) on the last line,
@@ -106,7 +106,7 @@ once it's ticked off.
 ### 6. Document the section's fixes
 
 Every fix the section made is a mistake nothing steered the branch's author
-away from. Run the `documentation` skill (`~/.cursor/skills/documentation/SKILL.md`)
+away from. Run the `documentation` skill ([documentation/SKILL.md](../documentation/SKILL.md))
 over them, so the agent docs steer the next author to the fixed version first
 time and the next final pass has less to fix.
 
@@ -118,10 +118,10 @@ time and the next final pass has less to fix.
 
 ### 7. Next section, back to 3
 
-Offer to run the `update-pr` skill (`~/.cursor/skills/update-pr/SKILL.md`),
+Offer to run the `update-pr` skill ([update-pr/SKILL.md](../update-pr/SKILL.md)),
 which commits the section's held fixes and doc edits before it pushes. Wait for
 the answer, then move on as the **Sections** in
-`~/.cursor/skills/shared/reading-order.md` set out.
+[shared/reading-order.md](../shared/reading-order.md) set out.
 
 ### 8. Report
 
@@ -131,12 +131,12 @@ the answer, then move on as the **Sections** in
   doc edit it led to, if any.
 - List the phases the user dropped, and the asides the passes turned up.
 - List the findings held for the author, and offer to post them with the
-  `review-pr` skill (`~/.cursor/skills/review-pr/SKILL.md`). Its submit step
+  `review-pr` skill ([review-pr/SKILL.md](../review-pr/SKILL.md)). Its submit step
   writes the summary and hands the PR back to the author.
 - Where nothing was held, in propertywerks, ask whether to label the PR
   `[PR] ready for merge`. On a yes, and once the pass's fixes are pushed, swap
   it in for whichever `[PR]` stage label the PR carries, and leave the assignees
   and reviews alone.
 - Where another author wrote the branch, offer to summarise the pass for them
-  with the `changes` skill (`~/.cursor/skills/changes/SKILL.md`). Leave pushing
+  with the `changes` skill ([changes/SKILL.md](../changes/SKILL.md)). Leave pushing
   to the user.

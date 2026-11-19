@@ -16,7 +16,7 @@ though say when something is worth a second look.
 ## Scope
 
 - Work from the net diff vs the parent, gathered as
-  `~/.cursor/skills/shared/net-diff.md` sets out.
+  [shared/net-diff.md](../shared/net-diff.md) sets out.
 - Fetch the connected PR for reference:
   `gh pr view --json number,title,body,url,baseRefName,state`.
 - Read the current files around the diff, not only the diff itself. A
@@ -30,7 +30,7 @@ Prose in complete sentences, with a bold run-in heading per file. No bullet list
 of paths.
 
 **Lead** and **Areas** - follow the `orient` skill
-(`~/.cursor/skills/orient/SKILL.md`). Its output opens the walkthrough as
+([orient/SKILL.md](../orient/SKILL.md)). Its output opens the walkthrough as
 written, and the file sections below do the explaining it leaves out.
 
 **File sections** - the rest of the walkthrough, one section per file, already
@@ -44,7 +44,7 @@ ends when the last file is ticked off. Where a file needs no real review, say so
 in a sentence rather than leaving it out.
 
 Work the order out silently, as the **Order** in
-`~/.cursor/skills/shared/reading-order.md` sets out, then:
+[shared/reading-order.md](../shared/reading-order.md) sets out, then:
 
 - Where the details make no sense without the shape of the feature, open the
   lead with a skim of the assembly file, say explicitly that it's a skim and

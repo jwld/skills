@@ -16,7 +16,7 @@ leaves explaining the code to whatever comes next.
 ## Scope
 
 - Work from the net diff vs the parent, gathered as
-  `~/.cursor/skills/shared/net-diff.md` sets out. The per-file line counts in
+  [shared/net-diff.md](../shared/net-diff.md) sets out. The per-file line counts in
   `--stat` are what size the areas, so keep them to hand.
 - Fetch the connected PR for the link:
   `gh pr view --json number,title,url,baseRefName`.

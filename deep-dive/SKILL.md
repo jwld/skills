@@ -14,7 +14,7 @@ for the user to act on. Make no code edits until they say which.
 ## Scope
 
 Work from the net diff vs the parent, gathered as
-`~/.cursor/skills/shared/net-diff.md` sets out.
+[shared/net-diff.md](../shared/net-diff.md) sets out.
 
 ## Pending review
 
@@ -45,7 +45,7 @@ gh api graphql -f query='
 ## Logic review
 
 Run the **Logic** and **Verify before reporting** passes in
-`~/.cursor/skills/shared/review-passes.md` over the diff. The other passes
+[shared/review-passes.md](../shared/review-passes.md) over the diff. The other passes
 belong to the reviews that ask for them.
 
 ## Output

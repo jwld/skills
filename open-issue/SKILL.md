@@ -20,7 +20,7 @@ for good. The rest depends on where the issue comes from.
   flow writes, plan and all.
 - **For a PR that has none** (the `open-pr` skill) - the
   work is already done, so the body is the `update-issue` skill's
-  **Write-up** for one PR (`~/.cursor/skills/update-issue/SKILL.md`), titled
+  **Write-up** for one PR ([update-issue/SKILL.md](../update-issue/SKILL.md)), titled
   as the PR will be.
 - **A bug** - the problem, a sentence or two. When the chat suggested a fix,
   follow it with `## Suggested fix`: the fix as suggested, naming the code it
@@ -59,7 +59,7 @@ A label for each area the work touches.
 
 ## Create
 
-Pass the body as `~/.cursor/skills/shared/gh-body.md` sets out. Each command
+Pass the body as [shared/gh-body.md](../shared/gh-body.md) sets out. Each command
 below takes the body's heredoc after it.
 
 ```

@@ -35,10 +35,10 @@ Give every topic in the notes one destination:
 - **Existing issue** - it adds to or changes work an open issue already holds,
   and has to land before that work's PR merges. Find open PRs with
   `gh pr list --state open` and their issues as the `update-issue` skill's
-  **Find the issue** step sets out (`~/.cursor/skills/update-issue/SKILL.md`),
+  **Find the issue** step sets out ([update-issue/SKILL.md](../update-issue/SKILL.md)),
   or the issue alone with `gh issue list --state open`. A PR with no issue
   gets one first, as the `open-pr` skill's **Find or open the issue** step
-  sets out (`~/.cursor/skills/open-pr/SKILL.md`).
+  sets out ([open-pr/SKILL.md](../open-pr/SKILL.md)).
 - **New issue** - work nothing open covers yet, including a follow-up to open
   work that can wait until its PR merges.
 - **Not recorded** - context, priorities and discussion with no work in it.
@@ -71,7 +71,7 @@ each item it touches. Then for each item:
 ### 3. Comment on the issue
 
 `gh issue comment <number> --body-file -`, passing the body as
-`~/.cursor/skills/shared/gh-body.md` sets out, and opening with the meeting
+[shared/gh-body.md](../shared/gh-body.md) sets out, and opening with the meeting
 date:
 
 ```
@@ -105,13 +105,13 @@ else changes.
 Where the issue has an open PR the items block, and step 4's ownership check
 lets you edit it, give its description the
 outstanding-work notice the `write-up-branch` skill sets out
-(`~/.cursor/skills/write-up-branch/SKILL.md`), unless it's already there. Write
+([write-up-branch/SKILL.md](../write-up-branch/SKILL.md)), unless it's already there. Write
 the whole body back with `gh pr edit <number> --body-file -`, built from the
 current body so nothing else changes.
 
 ### 6. Open an issue for new work
 
-Follow the `open-issue` skill (`~/.cursor/skills/open-issue/SKILL.md`). Meeting
+Follow the `open-issue` skill ([open-issue/SKILL.md](../open-issue/SKILL.md)). Meeting
 work is a backlog item, so leave it unassigned unless the user says it's theirs.
 
 The body is the issue's `## Problem`, kept as prose, a short paragraph per

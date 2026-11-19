@@ -159,11 +159,11 @@ PR goes straight to step 5.
 
 - Implement the response they chose, on the PR's head branch, and verify
   it as
-  `~/.cursor/skills/shared/verify.md` sets out.
+  [shared/verify.md](../shared/verify.md) sets out.
 - Stop for review: explain the change and point at the files that matter. Don't
   commit yet.
 - On the go ahead, commit with the `commit` skill
-  (`~/.cursor/skills/commit/SKILL.md`). Leave pushing to the user; a commit is
+  ([commit/SKILL.md](../commit/SKILL.md)). Leave pushing to the user; a commit is
   not a push.
 
 ### 5. Next point - back to 3
@@ -183,7 +183,7 @@ fix is committed.
 **Then GitHub**, each on the user's go ahead:
 
 - Push and refresh the PR write-up and its issue with the `update-pr` skill
-  (`~/.cursor/skills/update-pr/SKILL.md`), when the user asks for it.
+  ([update-pr/SKILL.md](../update-pr/SKILL.md)), when the user asks for it.
 - In propertywerks, once the fixes are pushed, swap the label so the reviewer
   knows the PR is back with them:
 
@@ -191,7 +191,7 @@ fix is committed.
   gh pr edit --add-label "[PR] needs re-review" --remove-label "[PR] changes requested"
   ```
 - Open a follow-up issue for each point moved to one, with the `open-issue`
-  skill (`~/.cursor/skills/open-issue/SKILL.md`).
+  skill ([open-issue/SKILL.md](../open-issue/SKILL.md)).
 - Draft a reply per point: what changed and the commit it landed in, or why it
   was declined or moved to an issue (with the link). A couple of sentences,
   neutral register, no thanks preamble. Show each rendered as plain paragraphs

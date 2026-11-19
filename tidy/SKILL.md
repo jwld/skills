@@ -89,7 +89,7 @@ disagreement in the report rather than tidying against it.
 **Comments**
 
 Follow the `review-comments` skill
-(`~/.cursor/skills/review-comments/SKILL.md`), scoped to the chunk. `AGENTS.md`
+([review-comments/SKILL.md](../review-comments/SKILL.md)), scoped to the chunk. `AGENTS.md`
 and the glossary stay with the `documentation` pass.
 
 **Bugs and dead code**
@@ -142,7 +142,7 @@ has to change to keep working.
 
 ### 5. Verify
 
-Verify as `~/.cursor/skills/shared/verify.md` sets out. A tidy holds behaviour
+Verify as [shared/verify.md](../shared/verify.md) sets out. A tidy holds behaviour
 steady, so lint and typecheck carry it unless step 3's bugs and dead code
 touched logic a suite covers.
 

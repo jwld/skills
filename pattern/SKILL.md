@@ -79,7 +79,7 @@ Once the user has replied, build the option they chose where step 2 found it
 has to live, switching to Agent mode first when another mode is active.
 
 Document it in the same step, as the `review-docs` skill's **Writing** route
-sets out (`~/.cursor/skills/review-docs/SKILL.md`): the pattern as a rule the
+sets out ([review-docs/SKILL.md](../review-docs/SKILL.md)): the pattern as a rule the
 next author can follow, in the `AGENTS.md` nearest the code it governs. The
 code and its doc reach review together.
 

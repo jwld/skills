@@ -15,8 +15,8 @@ Apply the ones that earn a place, and leave the working tree uncommitted.
 
 This skill decides what to look at. What each edit says, and how each file is
 judged, is the **Review** of the `review-docs` skill
-(`~/.cursor/skills/review-docs/SKILL.md`) for agent docs and of the
-`review-comments` skill (`~/.cursor/skills/review-comments/SKILL.md`) for
+([review-docs/SKILL.md](../review-docs/SKILL.md)) for agent docs and of the
+`review-comments` skill ([review-comments/SKILL.md](../review-comments/SKILL.md)) for
 comments, scoped to what's listed below rather than whole directories.
 
 ## Scope
@@ -29,7 +29,7 @@ comments, scoped to what's listed below rather than whole directories.
 ## Sources of signal
 
 - **The diff** - the net diff vs the parent, gathered as
-  `~/.cursor/skills/shared/net-diff.md` sets out.
+  [shared/net-diff.md](../shared/net-diff.md) sets out.
 - **The session** - what had to be corrected, explained, or found out the hard
   way while doing the work: a convention you had to be told, a term that turned
   out ambiguous, a claim that proved false. A wrong turn taken because no doc
@@ -66,7 +66,7 @@ Applies when another author wrote some of the branch. The aim is that the next
 agent writing this kind of code writes the user's version first time.
 
 - Take the user's edits as the `changes` skill
-  (`~/.cursor/skills/changes/SKILL.md`) finds them in **Find the author
+  ([changes/SKILL.md](../changes/SKILL.md)) finds them in **Find the author
   boundary** and **Diff the user's work only**, but diff the merged tree against
   the working tree rather than `HEAD` (`git diff -M <tree>`), so uncommitted
   fixes count. Its list of what to skip doesn't apply here: a style tweak is
@@ -107,7 +107,7 @@ one call site is not enough for the next author to infer a rule from:
 
 ## Output
 
-Report as `~/.cursor/skills/shared/doc-report.md` sets out, agent docs and
+Report as [shared/doc-report.md](../shared/doc-report.md) sets out, agent docs and
 comments in one list.
 
 On another author's branch, add a list of every correction of how the code is

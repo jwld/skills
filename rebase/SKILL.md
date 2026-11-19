@@ -130,7 +130,7 @@ Lead with one verdict, before any finding, pattern or "no sweep" note:
 
 - **Fixes required on top.** The branch doesn't follow what the rebase brought
   in. One line per fix, the file first. Apply them, verify as
-  `~/.cursor/skills/shared/verify.md` sets out, then leave them uncommitted in
+  [shared/verify.md](../shared/verify.md) sets out, then leave them uncommitted in
   the tree so the user reviews them in the review tool, and stop with the
   branch unpushed. Don't offer to commit them. Only once the user asks for a
   commit, make one on top of the rebase, then go to step 7. Folding them into
@@ -143,13 +143,13 @@ Lead with one verdict, before any finding, pattern or "no sweep" note:
 The rebase is complete when the sweep has nothing left to fix: straight after a
 **Nothing to fix** verdict, or once the user's fixes are committed. Push then,
 and only when the branch has already been pushed. Follow the `push` skill's
-**Which push** section (`~/.cursor/skills/push/SKILL.md`). The rebase rewrote
+**Which push** section ([push/SKILL.md](../push/SKILL.md)). The rebase rewrote
 the history, so it takes force with lease.
 
 After the push, refresh the branch's open PR when the rebase changed what the
 branch does: a conflict resolved by rewriting the branch's code, sweep fixes
 committed on top, or a commit dropped because the base already had it. Follow
-step 4 of the `update-pr` skill (`~/.cursor/skills/update-pr/SKILL.md`). A
+step 4 of the `update-pr` skill ([update-pr/SKILL.md](../update-pr/SKILL.md)). A
 clean rebase that left the net diff as it was needs no refresh.
 
 ## Stacked branches

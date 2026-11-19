@@ -19,7 +19,7 @@ its own markdown code block:
 
 ## Source of truth
 
-Gather the diff as `~/.cursor/skills/shared/net-diff.md` sets out. The two
+Gather the diff as [shared/net-diff.md](../shared/net-diff.md) sets out. The two
 exceptions are a `## Bug:` section, which may quote logs pasted in the chat,
 and the outstanding-work notice, which comes from the issue.
 
@@ -44,7 +44,7 @@ and the outstanding-work notice, which comes from the issue.
 2. Confirm the current branch and that it has commits ahead of the parent.
 3. Check for uncommitted work (`git status`). If there is any, point it out and
    ask whether to commit it first with the `commit` skill
-   (`~/.cursor/skills/commit/SKILL.md`). Do not continue the write-up until they
+   ([commit/SKILL.md](../commit/SKILL.md)). Do not continue the write-up until they
    answer (either commit first, or they say to proceed without).
 4. Gather the diff (see **Source of truth**), and read the issue
    (`gh issue view`) for its `## Outstanding` section.
@@ -71,7 +71,7 @@ file. The reader can see individual lines, but should not have to reconstruct
 the material changes from them later.
 
 Find the issue as the `update-issue` skill's **Find the issue** step sets out
-(`~/.cursor/skills/update-issue/SKILL.md`), and put `Resolves #123` on its own
+([update-issue/SKILL.md](../update-issue/SKILL.md)), and put `Resolves #123` on its own
 line above `## AI Summary`. Never guess the number; leave it out when none
 turns up. Where the issue's plan lists several PRs (`PR1:`, `PR2:`), only the
 last one resolves it. An earlier one puts `Part of #123` there instead, so
@@ -210,7 +210,7 @@ another PR. A schema migration that ships with the deploy doesn't count, nor
 does an ordering constraint that's already been satisfied.
 
 **`## Squash message`** - last section. Follow the `squash` skill
-(`~/.cursor/skills/squash/SKILL.md`) for the bullets (reuse the diff already
+([squash/SKILL.md](../squash/SKILL.md)) for the bullets (reuse the diff already
 gathered above) so whoever merges has them to hand. Put them in a fenced code
 block, so GitHub renders a copy button and they can be lifted in one click.
 When emitting output 2 as a code block in chat, fence that outer block with
@@ -240,6 +240,6 @@ Rules:
 
 Skip when the squash message has already been set in the PR description.
 
-Otherwise follow the `squash` skill (`~/.cursor/skills/squash/SKILL.md`). Reuse
+Otherwise follow the `squash` skill ([squash/SKILL.md](../squash/SKILL.md)). Reuse
 the diff already gathered above rather than re-running its workflow from
 scratch. Emit its code block as the third output.

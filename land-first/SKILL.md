@@ -16,7 +16,7 @@ source branch keeps every commit it has. Once the new PR merges, the user
 rebases the source branch onto `master` themselves.
 
 The work runs through the `phased-implementation` skill
-(`~/.cursor/skills/phased-implementation/SKILL.md`): planned, then carried over
+([phased-implementation/SKILL.md](../phased-implementation/SKILL.md)): planned, then carried over
 a phase at a time, each phase committed only once the user has reviewed it.
 Invoking this skill is the go-ahead for the rest: the cherry-picks, and pushing
 the new branch for its PR.
@@ -39,16 +39,16 @@ the new branch for its PR.
 
 - Note its name, its PR (`gh pr view --json number,closingIssuesReferences`),
   and its issue, found as the `update-issue` skill's **Find the issue** sets
-  out (`~/.cursor/skills/update-issue/SKILL.md`). Either may not exist.
+  out ([update-issue/SKILL.md](../update-issue/SKILL.md)). Either may not exist.
 - Check `git status`. Commit uncommitted work on the source branch with the
-  `commit` skill (`~/.cursor/skills/commit/SKILL.md`) before switching
+  `commit` skill ([commit/SKILL.md](../commit/SKILL.md)) before switching
   branches, without asking. Leave leftover scrap (a stray console log)
   uncommitted and say so.
 
 ### 2. Pin down the piece
 
 Gather `git log --oneline origin/master..HEAD` and the net diff against
-`origin/master`, as `~/.cursor/skills/shared/net-diff.md` sets out. The piece
+`origin/master`, as [shared/net-diff.md](../shared/net-diff.md) sets out. The piece
 ends up as either whole commits or specific hunks.
 
 - **Named** - the piece is the work the user named. Ask when it could cover
@@ -122,7 +122,7 @@ Leave plan mode with `SwitchMode`, then branch here rather than as
 
 - `git fetch origin master`, then `git switch -c <name> origin/master`, falling
   back to `main` or the remote default when there's no `master`.
-- Name it after the piece, as `~/.cursor/skills/shared/branch-name.md` sets out.
+- Name it after the piece, as [shared/branch-name.md](../shared/branch-name.md) sets out.
 
 ### 6. Carry the piece over
 
@@ -140,7 +140,7 @@ piece's lines from a file that also holds other work.
 ### 7. Verify it stands alone
 
 Once the last phase is committed, verify the branch as
-`~/.cursor/skills/shared/verify.md` sets out. A phase can leave the branch
+[shared/verify.md](../shared/verify.md) sets out. A phase can leave the branch
 broken, but the piece has to land working. The typecheck is what catches
 something the piece still needs from the source branch. A failure from that
 goes back to the user: a further phase that brings it along or reworks around
@@ -152,7 +152,7 @@ Run `phased-implementation`'s **Wrap up** step, opening the PR once the user
 says they're happy and before its `update-issue` call, so the issue's plan can
 link it.
 
-Open the PR with the `open-pr` skill (`~/.cursor/skills/open-pr/SKILL.md`).
+Open the PR with the `open-pr` skill ([open-pr/SKILL.md](../open-pr/SKILL.md)).
 Above `## AI Summary`, put `Resolves #<new issue>` on its own line when step 4
 opened one, with the `In advance of` line from step 4 under it when that step
 wrote one.

@@ -33,14 +33,14 @@ and report that too. Never escalate to `--force`.
 Stop when the branch is `master` and the remote is
 `propertywerks/propertywerks`. That repo's `master` is protected, so the work
 needs its own branch and a PR (`open-pr` skill,
-`~/.cursor/skills/open-pr/SKILL.md`). Other remotes (`jwld/skills`) can push
+[open-pr/SKILL.md](../open-pr/SKILL.md)). Other remotes (`jwld/skills`) can push
 to `master`, as can completionism.
 Check the remote, not the owner or the branch name alone.
 
 ### 2. Commit
 
 Check `git status`. Commit intentional uncommitted work with the `commit` skill
-(`~/.cursor/skills/commit/SKILL.md`). Leave leftover scrap (a stray console
+([commit/SKILL.md](../commit/SKILL.md)). Leave leftover scrap (a stray console
 log) uncommitted and say so.
 
 A clean tree goes straight to the push.

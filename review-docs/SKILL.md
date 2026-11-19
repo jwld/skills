@@ -124,4 +124,4 @@ rules above.
 ## Report
 
 When another skill called this, use that skill's report. Otherwise report as
-`~/.cursor/skills/shared/doc-report.md` sets out.
+[shared/doc-report.md](../shared/doc-report.md) sets out.

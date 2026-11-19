@@ -33,14 +33,14 @@ again for either.
   and say so if it doesn't. Use its `packageManager` field for every command
   below.
 - `git status` has to be clean. Uncommitted work gets committed (`commit` skill,
-  `~/.cursor/skills/commit/SKILL.md`) or stashed first (ask which).
+  [commit/SKILL.md](../commit/SKILL.md)) or stashed first (ask which).
 - Fetch, then start from the remote base (`origin/master`, falling back to
   `main` or the remote default), so the bump doesn't sit on a stale tree.
 
 ### 2. Branch
 
 `git switch -c minor-package-updates` off the base, named as
-`~/.cursor/skills/shared/branch-name.md` sets out.
+[shared/branch-name.md](../shared/branch-name.md) sets out.
 
 ### 3. Run the update
 
@@ -97,7 +97,7 @@ Don't list bumped packages as bullets; the diff has them.
 
 ### 7. Open the PR
 
-Follow the `open-pr` skill (`~/.cursor/skills/open-pr/SKILL.md`) from its
+Follow the `open-pr` skill ([open-pr/SKILL.md](../open-pr/SKILL.md)) from its
 step 3. Its step 1 is already answered: **does not need review**, so the
 write-up audience is historical reference and the PR gets the
 `[PR] ready for merge` label.

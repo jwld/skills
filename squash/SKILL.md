@@ -14,7 +14,7 @@ merge. No title line (just the bullets).
 
 ## Source of truth
 
-Gather the diff as `~/.cursor/skills/shared/net-diff.md` sets out.
+Gather the diff as [shared/net-diff.md](../shared/net-diff.md) sets out.
 
 ## Workflow
 

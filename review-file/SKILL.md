@@ -27,14 +27,14 @@ The file is the one the user named. Ask when that isn't clear.
 
 ### 2. Review it whole
 
-Run every pass in `~/.cursor/skills/shared/review-passes.md` over the whole
+Run every pass in [shared/review-passes.md](../shared/review-passes.md) over the whole
 file, reading the logic against the file as it stands rather than a diff. The
 whole file is what's under review, however old the code in it, so only what
 belongs to a caller or a sibling is an aside.
 
 ### 3. Work the phases
 
-Take the findings one phase at a time, as `~/.cursor/skills/shared/phases.md`
+Take the findings one phase at a time, as [shared/phases.md](../shared/phases.md)
 sets out.
 
 ### 4. Report

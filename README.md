@@ -53,11 +53,13 @@ Slash-only skills are marked `/`.
 
 ## How the pieces reach each other
 
-- A skill points at a fragment by absolute path and phrasing, for example
-  "as `~/.cursor/skills/shared/verify.md` sets out". Read the fragment at
-  that point and follow it as part of the step.
-- A skill hands off to another by name and path, for example "with the
-  `commit` skill (`~/.cursor/skills/commit/SKILL.md`)". Read that skill and
+- Every pointer is a Markdown link relative to the file it sits in, so it
+  resolves the same from `~/.cursor/skills`, a clone, or GitHub.
+- A skill points at a fragment by link and phrasing, for example "as
+  [shared/verify.md](shared/verify.md) sets out". Read the fragment at that
+  point and follow it as part of the step.
+- A skill hands off to another by name and link, for example "with the
+  `commit` skill ([commit/SKILL.md](commit/SKILL.md))". Read that skill and
   run it in full; its own rules apply, including any pause for the user.
 - Chains run deep. `open-pr` reaches `write-up-branch`, `commit`, `push`,
   `open-issue` and `update-issue`; `update-pr` reaches most of the same.
@@ -66,12 +68,12 @@ Slash-only skills are marked `/`.
 ## Changing a skill
 
 - Find everything that depends on a file before editing it:
-  `rg "skills/shared/verify.md"` or `rg "skills/commit/SKILL.md"`. A change to
+  `rg "shared/verify.md"` or `rg "commit/SKILL.md"`. A change to
   `commit`, `verify.md` or `net-diff.md` lands in many skills at once.
 - Keep each rule in one place. When two skills need the same rule, move it to
-  `shared/` and point at it from both rather than copying it.
+  `shared/` and link it from both rather than copying it.
 - Write in the style of `writing-for-agents`
-  (`~/.agents/skills/writing-for-agents/SKILL.md`); use `refine-skill` when
-  the change comes from what a run taught.
+  (`~/.agents/skills/writing-for-agents/SKILL.md`, a separate install outside
+  this repo); use `refine-skill` when the change comes from what a run taught.
 - Commit with the `commit` skill, and only when the user asks. The remote is
   `jwld/skills` on GitHub.

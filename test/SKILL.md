@@ -88,7 +88,7 @@ the one in the group that owns the branch.
 
 ### 4. Verify, coverage included
 
-- Run the spec, then lint and typecheck as `~/.cursor/skills/shared/verify.md`
+- Run the spec, then lint and typecheck as [shared/verify.md](../shared/verify.md)
   sets out.
 - Measure branch coverage of the subject alone, with the command the testing
   docs give for it.

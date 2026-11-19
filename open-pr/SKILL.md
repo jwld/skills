@@ -9,9 +9,9 @@ description: >-
 # Open a PR
 
 Create a GitHub pull request for the current branch. Title and body come from
-the `write-up-branch` skill (`~/.cursor/skills/write-up-branch/SKILL.md`).
+the `write-up-branch` skill ([write-up-branch/SKILL.md](../write-up-branch/SKILL.md)).
 
-A PR gets an issue when `~/.cursor/skills/shared/issue.md` says so. The issue
+A PR gets an issue when [shared/issue.md](../shared/issue.md) says so. The issue
 holds why the work exists and what's still owed before merge; the PR holds what
 the diff does.
 
@@ -53,19 +53,19 @@ later stages of review, so they map to human review as well.
 ### 2. Commit any uncommitted work
 
 Check `git status`. If there is uncommitted work, commit it with the `commit`
-skill (`~/.cursor/skills/commit/SKILL.md`) before continuing. Do not ask; just
+skill ([commit/SKILL.md](../commit/SKILL.md)) before continuing. Do not ask; just
 commit.
 
 ### 3. Find or open the issue
 
 Look for the branch's issue as the `update-issue` skill's **Find the issue**
-step sets out (`~/.cursor/skills/update-issue/SKILL.md`), without asking when
-none turns up. Whether to open one is `~/.cursor/skills/shared/issue.md`.
+step sets out ([update-issue/SKILL.md](../update-issue/SKILL.md)), without asking when
+none turns up. Whether to open one is [shared/issue.md](../shared/issue.md).
 
 - **Found** - follow `update-issue` so the issue matches the work now on the
   branch.
 - **None, and it needs one** - open one with the `open-issue` skill
-  (`~/.cursor/skills/open-issue/SKILL.md`), with the body it gives an issue
+  ([open-issue/SKILL.md](../open-issue/SKILL.md)), with the body it gives an issue
   opened for a PR. It's work under way, so assign `@me`. Don't ask first; this
   skill is the go-ahead.
 - **None, and it doesn't** - skip. The PR has no `Resolves` line.
@@ -81,14 +81,14 @@ the description's `## Squash message` section, so it needs no output of its own.
 ### 5. Push and open the PR
 
 - Push as the `push` skill's **Which push** section decides
-  (`~/.cursor/skills/push/SKILL.md`). A branch being opened as a PR has only
+  ([push/SKILL.md](../push/SKILL.md)). A branch being opened as a PR has only
   gained commits, so it takes a plain push.
 - Base is `master`, falling back to `main` or the remote default when there's no
   `master`.
 - If a PR already exists for the branch, stop and say so. Do not open a second
   one, and do not overwrite the existing title or body.
 - Create with `gh pr create`, passing `--title` and the body as
-  `~/.cursor/skills/shared/gh-body.md` sets out. In propertywerks, apply the
+  [shared/gh-body.md](../shared/gh-body.md) sets out. In propertywerks, apply the
   label, reviewer and assignee for the kind from step 1 in the same step. Each
   command below takes the body's heredoc after it.
 

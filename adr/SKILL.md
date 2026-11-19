@@ -21,7 +21,7 @@ Two ways in:
   against the rules below. Edit a `proposed` one. An accepted one is immutable,
   so its shortfalls go in the report, and a decision that has since changed is
   offered as a superseding ADR (**Status and change**). Report as
-  `~/.cursor/skills/shared/doc-report.md` sets out.
+  [shared/doc-report.md](../shared/doc-report.md) sets out.
 
 ## What earns one
 

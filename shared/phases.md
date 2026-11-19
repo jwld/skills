@@ -35,7 +35,7 @@ Note any uncommitted changes already in the files in scope
 - Make the agreed fix and nothing beyond it. Something else you spot while
   fixing becomes a new phase, not part of this one. The edits the fix forces
   elsewhere (updating the references to a rename, say) are part of it.
-- Verify as `~/.cursor/skills/shared/verify.md` sets out, running the suites
+- Verify as [shared/verify.md](verify.md) sets out, running the suites
   that cover the logic when the fix changed behaviour.
 
 ## Offer the commit
@@ -45,7 +45,7 @@ Note any uncommitted changes already in the files in scope
 - A simple stylistic fix: hold it, and offer the held fixes as one commit at the
   end of the review.
 - On a yes, commit only this phase's change, following the `commit` skill
-  (`~/.cursor/skills/commit/SKILL.md`). Where a file had changes before the
+  ([commit/SKILL.md](../commit/SKILL.md)). Where a file had changes before the
   review, stage the phase's hunks alone.
 - On a no, leave it in the working tree and move on.
 
