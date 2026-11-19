@@ -28,7 +28,7 @@ say so and ask whether to pass over it as it stands.
 - [ ] 1. Open the branch
 - [ ] 2. Orient, then section the branch
 - [ ] 3. Review the section
-- [ ] 4. Work its phases
+- [ ] 4. Work its findings
 - [ ] 5. Look through the section
 - [ ] 6. Document the section's fixes
 - [ ] 7. Next section, back to 3
@@ -71,22 +71,18 @@ Run every pass in [shared/review-passes.md](../shared/review-passes.md) over the
 files, checks included. A finding in another section's files waits for that
 section's turn. One outside the scope is an aside for the report.
 
-### 4. Work its phases
+### 4. Work its findings
 
-Take the section's findings one phase at a time, as
-[shared/phases.md](../shared/phases.md) sets out.
+Take the section's findings one at a time, as
+[shared/findings.md](../shared/findings.md) sets out.
 
 Close every message from here to the report with where the pass stands, as the
-section and phase numbers alone (`Section 1/8, Phase 2/5`) on the last line,
-leaving their names out. Keep it on a reply that only answers a tweak inside the phase too, so the
-user never has to work out which phase is open.
+section and finding numbers alone (`Section 1/8, Finding 2/5`) on the last
+line, leaving their names out. Keep it on a reply that only answers a tweak
+inside the finding too, so the user never has to work out which finding is
+open.
 
-Stay on a phase once its fix lands and its commit is offered, until the user
-says they're done with it, since they may still be working on it in the tree.
-Only then tick it off and open the next phase, the next section or the report,
-rather than moving on when the fix is in.
-
-A finding only the author can settle doesn't become a phase. This covers a
+A finding only the author can settle isn't worked here. This covers a
 question about what they intended, or a problem that's theirs to rework rather
 than a final pass's to fix. Say so when it comes up, then hold it with its file,
 lines and point in a line. The comment's wording is agreed later, in
@@ -94,14 +90,13 @@ lines and point in a line. The comment's wording is agreed later, in
 
 ### 5. Look through the section
 
-Once a section's last phase is ticked off, list the code the section covered, so
-the user can look through it for anything the review missed: each file, with
-the line ranges in it where the section holds only part of the file. Mark the
-files this section finishes, so the user knows which to tick off on GitHub. A
-file split across sections finishes with its last. Wait until they say they're
-done with it. A problem they raise becomes a further phase of
-the same section, worked as step 4 sets out, and the list comes round again
-once it's ticked off.
+Once a section's last finding is ticked off, list the code the section
+covered, so the user can look through it for anything the review missed: each
+file, with the line ranges in it where the section holds only part of the
+file. Mark the files this section finishes, so the user knows which to tick
+off on GitHub. Wait until they say they're done with it. A problem they raise
+becomes a further finding of the same section, worked as step 4 sets out, and
+the list comes round again once it's ticked off.
 
 ### 6. Document the section's fixes
 
@@ -114,7 +109,7 @@ time and the next final pass has less to fix.
 - Take each fix through its **Corrections to another author's work**, whoever
   wrote the branch, so every fix ends on one of its cases.
 - Leave its edits uncommitted beside the section's held fixes, and stay on them
-  until the user says they're done, as for a phase.
+  until the user says they're done, as for a finding.
 
 ### 7. Next section, back to 3
 
@@ -129,7 +124,7 @@ the answer, then move on as the **Sections** in
 - Offer the held stylistic fixes as one commit, if any are waiting.
 - List what was fixed, by section, each with whether it was committed and the
   doc edit it led to, if any.
-- List the phases the user dropped, and the asides the passes turned up.
+- List the findings the user dropped, and the asides the passes turned up.
 - List the findings held for the author, and offer to post them with the
   `review-pr` skill ([review-pr/SKILL.md](../review-pr/SKILL.md)). Its submit step
   writes the summary and hands the PR back to the author.

@@ -1,7 +1,7 @@
 ---
 name: review-file
 description: >-
-  Reviews one file, then works through the findings one phase at a time: the
+  Reviews one file, then works through the findings one at a time: the
   problem, the fix, the user's go-ahead, then a commit offer. Use only when the
   user runs /review-file.
 disable-model-invocation: true
@@ -17,7 +17,7 @@ waits for the user's go-ahead, and every commit waits for theirs too.
 ```
 - [ ] 1. Fix the file
 - [ ] 2. Review it whole
-- [ ] 3. Work the phases
+- [ ] 3. Work the findings
 - [ ] 4. Report
 ```
 
@@ -32,13 +32,14 @@ file, reading the logic against the file as it stands rather than a diff. The
 whole file is what's under review, however old the code in it, so only what
 belongs to a caller or a sibling is an aside.
 
-### 3. Work the phases
+### 3. Work the findings
 
-Take the findings one phase at a time, as [shared/phases.md](../shared/phases.md)
+Take the findings one at a time, as [shared/findings.md](../shared/findings.md)
 sets out.
 
 ### 4. Report
 
 - Offer the held stylistic fixes as one commit, if any are waiting.
 - List what was fixed, each with whether it was committed.
-- List the phases the user dropped, and the asides about callers and siblings.
+- List the findings the user dropped, and the asides about callers and
+  siblings.
