@@ -91,8 +91,10 @@ lines and point in a line. The comment's wording is agreed later, in
 
 ### 5. Look through the section
 
-Once a section's last finding is ticked off, list the code the section
-covered, so the user can look through it for anything the review missed: each
+Once a section's last finding is ticked off, commit its held stylistic fixes as
+one commit, following the `commit` skill ([commit/SKILL.md](../commit/SKILL.md)).
+Reaching the look-through is the go-ahead for that commit, so don't offer it.
+Then list the code the section covered, so the user can look through it for anything the review missed: each
 file, with the line ranges in it where the section holds only part of the
 file. Mark the files this section finishes, so the user knows which to tick
 off on GitHub. Wait until they say they're done with it. A problem they raise
@@ -115,8 +117,8 @@ time and the next final pass has less to fix.
 ### 7. Next section, back to 3
 
 Offer to run the `update-pr` skill ([update-pr/SKILL.md](../update-pr/SKILL.md)),
-which commits the section's held fixes and doc edits before it pushes, so a
-yes commits them now rather than at the report. Wait for the answer, then move
+which commits the section's doc edits and any fixes still held before it
+pushes, so a yes commits them now rather than at the report. Wait for the answer, then move
 on as the **Sections** in
 [shared/reading-order.md](../shared/reading-order.md) set out.
 
