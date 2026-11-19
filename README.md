@@ -52,14 +52,21 @@ Slash-only skills are marked `/`.
 
 | File | Covers |
 | --- | --- |
-| `branch-name.md` | Naming a new branch, including the `jack/` prefix rule |
+| `base-branch.md` | The default branch, and a branch's base |
+| `branch-name.md` | Where work needs its own branch (protected `master`), and naming it, including the `jack/` prefix rule |
+| `choices.md` | Putting a choice to the user: a numbered choice in the chat, or the question tool |
 | `doc-report.md` | The report after a pass over agent docs, comments or ADRs |
+| `findings.md` | Taking review findings one fix at a time, each on the user's go-ahead |
 | `gh-body.md` | Passing an issue, PR or comment body to `gh` |
 | `issue.md` | Deciding whether the work gets a GitHub issue |
 | `net-diff.md` | Gathering the net branch diff against its parent |
-| `phases.md` | Taking review findings one fix at a time, each on the user's go-ahead |
+| `output.md` | Laying out what a skill writes (no hard wraps, short hyphens) |
+| `pending-review.md` | Reading your pending review on a PR |
+| `pr-labels.md` | The `[PR]` stage labels, their write-up audiences, and moving a PR between them |
+| `public-text.md` | Showing text that posts under the user's name before it goes up |
 | `reading-order.md` | The order a branch is read in, file by file or by section |
 | `review-passes.md` | What a review looks for, whatever it does with the findings |
+| `uncommitted.md` | Uncommitted work before a skill starts: commit it, or ask to commit or stash |
 | `verify.md` | Proving a change with narrow lint, typecheck and test runs |
 
 ## How the pieces reach each other
@@ -80,7 +87,8 @@ Slash-only skills are marked `/`.
 
 - Find everything that depends on a file before editing it:
   `rg "shared/verify.md"` or `rg "commit/SKILL.md"`. A change to
-  `commit`, `verify.md` or `net-diff.md` lands in many skills at once.
+  `commit`, `verify.md`, `net-diff.md`, `base-branch.md` or `uncommitted.md`
+  lands in many skills at once.
 - Keep each rule in one place. When two skills need the same rule, move it to
   `shared/` and link it from both rather than copying it.
 - Write in the style of `writing-for-agents` from mattpocock/skills
