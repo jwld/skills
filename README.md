@@ -1,0 +1,77 @@
+# Skills
+
+jwld's personal agent skills, loaded by Cursor from `~/.cursor/skills`. This
+file is the map: what lives where, how the pieces reach each other, and how to
+change one safely.
+
+## Layout
+
+- `<name>/SKILL.md` is one skill. Its frontmatter `description` is the
+  trigger and the source of truth for when it runs; the index below only
+  groups them.
+- A skill may carry sibling files it discloses behind a pointer (for example
+  `packages-major/take.md`, read only once the user says to proceed).
+- `shared/` holds fragments several skills follow. They are not skills: no
+  frontmatter, never triggered on their own, reached only through a pointer
+  in a skill. Each opens with "Pointed at, never copied."
+
+## Invocation
+
+- **Model-invoked**: the agent reads the skill whenever its description
+  matches the request, including from inside another skill.
+- **Slash-only**: `disable-model-invocation: true` in the frontmatter. Run it
+  only when the user types `/<name>`, or another skill explicitly hands off
+  to it.
+
+## Index
+
+Slash-only skills are marked `/`.
+
+| Area | Skills |
+| --- | --- |
+| Git and branches | `commit`, `push`, `backup-work`, `rebase`, `merged-branches`, `/land-first`, `/squash` |
+| Issues and PRs | `open-issue`, `update-issue`, `open-pr`, `update-pr`, `write-up-branch`, `meeting-notes`, `address-review`, `/review-pr`, `/changes` |
+| Reading a finished branch | `/orient`, `/walkthrough`, `/deep-dive`, `/final-pass`, `/review-file` |
+| Code and docs quality | `tidy`, `test`, `review-comments`, `review-docs`, `adr`, `/documentation`, `/pattern` |
+| Planning a piece of work | `/phased-implementation` |
+| Dependencies | `packages-minor`, `packages-major` |
+| The skills themselves | `refine-skill` |
+
+## Shared fragments
+
+| File | Covers |
+| --- | --- |
+| `branch-name.md` | Naming a new branch, including the `jack/` prefix rule |
+| `doc-report.md` | The report after a pass over agent docs, comments or ADRs |
+| `gh-body.md` | Passing an issue, PR or comment body to `gh` |
+| `issue.md` | Deciding whether the work gets a GitHub issue |
+| `net-diff.md` | Gathering the net branch diff against its parent |
+| `phases.md` | Taking review findings one fix at a time, each on the user's go-ahead |
+| `reading-order.md` | The order a branch is read in, file by file or by section |
+| `review-passes.md` | What a review looks for, whatever it does with the findings |
+| `verify.md` | Proving a change with narrow lint, typecheck and test runs |
+
+## How the pieces reach each other
+
+- A skill points at a fragment by absolute path and phrasing, for example
+  "as `~/.cursor/skills/shared/verify.md` sets out". Read the fragment at
+  that point and follow it as part of the step.
+- A skill hands off to another by name and path, for example "with the
+  `commit` skill (`~/.cursor/skills/commit/SKILL.md`)". Read that skill and
+  run it in full; its own rules apply, including any pause for the user.
+- Chains run deep. `open-pr` reaches `write-up-branch`, `commit`, `push`,
+  `open-issue` and `update-issue`; `update-pr` reaches most of the same.
+  Follow each hand-off as you reach it, not up front.
+
+## Changing a skill
+
+- Find everything that depends on a file before editing it:
+  `rg "skills/shared/verify.md"` or `rg "skills/commit/SKILL.md"`. A change to
+  `commit`, `verify.md` or `net-diff.md` lands in many skills at once.
+- Keep each rule in one place. When two skills need the same rule, move it to
+  `shared/` and point at it from both rather than copying it.
+- Write in the style of `writing-for-agents`
+  (`~/.agents/skills/writing-for-agents/SKILL.md`); use `refine-skill` when
+  the change comes from what a run taught.
+- Commit with the `commit` skill, and only when the user asks. The remote is
+  `jwld/skills` on GitHub.
