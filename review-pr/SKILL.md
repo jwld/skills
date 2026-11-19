@@ -59,34 +59,10 @@ post them.
 - Read the comments already on it
   (`gh api repos/{owner}/{repo}/pulls/{number}/comments`), so the review doesn't
   repeat a point someone has made.
-- Swap the label for `[PR] in review` unless it's already there, removing
-  whichever `[PR]` stage label the PR arrived with (usually `[PR] needs review`,
-  or `[PR] needs re-review` on a later round, and the `gh pr view` output above
-  says which):
-
-```bash
-gh pr edit --add-label "[PR] in review" --remove-label "[PR] needs review"
-```
-
-- Get the PR node id and your pending review, if you have one:
-
-```bash
-gh api graphql -f query='
-  query($owner: String!, $repo: String!, $pr: Int!) {
-    repository(owner: $owner, name: $repo) {
-      pullRequest(number: $pr) {
-        id
-        reviews(first: 1, states: PENDING) {
-          nodes { id }
-        }
-      }
-    }
-  }' \
-  -f owner=OWNER \
-  -f repo=REPO \
-  -F pr=NUMBER
-```
-
+- Move the PR to `[PR] in review` unless it's already there, as
+  [shared/pr-labels.md](../shared/pr-labels.md) sets out.
+- Get the PR node id and your pending review, if you have one, as
+  [shared/pending-review.md](../shared/pending-review.md) sets out.
 - Create the pending review the whole session's comments land in, when the query
   found none:
 
@@ -97,8 +73,7 @@ gh api graphql -f query='
   }' -f prId=PR_NODE_ID
 ```
 
-GitHub allows one pending review per person per PR, so an existing one gets
-reused rather than replaced (that's also how a part-finished review resumes in a
+An existing pending review gets reused rather than replaced (that's also how a part-finished review resumes in a
 later session). Keep the review id (`PRR_…`) to hand: steps 4 and 6 both need
 it.
 

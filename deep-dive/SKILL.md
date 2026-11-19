@@ -19,28 +19,8 @@ Work from the net diff vs the parent, gathered as
 ## Pending review
 
 Where the branch has a PR, read your pending review's comments before the
-review, so the findings build on them. A pending review is visible only to its
-author, so these are points the user has drafted but not yet sent.
-
-```bash
-gh api graphql -f query='
-  query($owner: String!, $repo: String!, $pr: Int!) {
-    repository(owner: $owner, name: $repo) {
-      pullRequest(number: $pr) {
-        reviews(first: 1, states: PENDING) {
-          nodes {
-            comments(first: 100) {
-              nodes { path line body }
-            }
-          }
-        }
-      }
-    }
-  }' \
-  -f owner=OWNER \
-  -f repo=REPO \
-  -F pr=NUMBER
-```
+review, as [shared/pending-review.md](../shared/pending-review.md) sets out,
+so the findings build on them.
 
 ## Logic review
 
