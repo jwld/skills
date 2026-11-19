@@ -18,9 +18,12 @@ before a new idea (**When the user moves on**).
 
 ## Branch
 
-- In the PropertyWerks repo (`~/GitHub/pwerks/propertywerks`), never commit on
-  `master`. Switch to a new branch first (`git switch -c`), named by the repo's
-  `.cursor/rules/branch-naming.mdc`, then commit there.
+- In the PropertyWerks repo (an `origin` remote of
+  `propertywerks/propertywerks`), never commit on `master`. Switch to a new
+  branch first (`git switch -c`), then commit there.
+- Name that branch with the author's short name as a prefix (`jack/` for jwld),
+  then at most four hyphen-separated words describing the change, not the phase
+  or ticket (`jack/crew-app-imports`, `jack/decouple-next-fonts`).
 - On any other branch, commit where you are.
 
 ## When the user moves on
@@ -67,8 +70,8 @@ continuation of the same idea stays in the tree.
   into one commit, a bullet per change, however many ideas they hold. A doc
   change tied to a code change rides in that change's commit instead.
 - That bundling is for docs caught up alongside code. In the skills repo
-  (`~/.cursor/skills`), and on a branch whose changes are all docs, one commit
-  per idea still holds.
+  (`jwld/skills`), and on a branch whose changes are all docs, one commit per
+  idea still holds.
 
 ## Amend
 
