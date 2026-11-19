@@ -11,9 +11,10 @@ disable-model-invocation: true
 
 The user's own pass over a finished branch, often another author's work, before
 it merges. It looks for what `review-pr` looks for, but each finding the user
-agrees to is fixed and committed in the working tree rather than posted. GitHub
-stays read-only apart from the closing label: no comment, review, reply or
-push. A finding only the author can settle is held for `review-pr` to post.
+agrees to is fixed and committed in the working tree rather than posted. The
+pass posts no comment, review or reply. GitHub changes only on the user's yes:
+to the `update-pr` offer after each section, and to the closing label. A
+finding only the author can settle is held for `review-pr` to post.
 
 ## Scope
 
@@ -114,14 +115,15 @@ time and the next final pass has less to fix.
 ### 7. Next section, back to 3
 
 Offer to run the `update-pr` skill ([update-pr/SKILL.md](../update-pr/SKILL.md)),
-which commits the section's held fixes and doc edits before it pushes. Wait for
-the answer, then move on as the **Sections** in
+which commits the section's held fixes and doc edits before it pushes, so a
+yes commits them now rather than at the report. Wait for the answer, then move
+on as the **Sections** in
 [shared/reading-order.md](../shared/reading-order.md) set out.
 
 ### 8. Report
 
 - Confirm that a section finished every file in the list, naming any it didn't.
-- Offer the held stylistic fixes as one commit, if any are waiting.
+- Offer the held stylistic fixes as one commit, if any are still waiting.
 - List what was fixed, by section, each with whether it was committed and the
   doc edit it led to, if any.
 - List the findings the user dropped, and the asides the passes turned up.
