@@ -2,7 +2,8 @@
 name: phased-implementation
 description:
   The full flow for a piece of work, from planning through phased
-  implement-review-commit to post-review follow-ups.
+  implement-review-commit to post-review follow-ups. Use only when the user
+  runs /phased-implementation.
 disable-model-invocation: true
 ---
 

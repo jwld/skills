@@ -2,9 +2,8 @@
 name: land-first
 description: >-
   Moves one piece of the current branch's work onto its own branch off master,
-  then opens a PR for it so it merges ahead of the branch it came from. Use when
-  the user wants part of a branch's work merged into master first, or asks what
-  on the branch could land first.
+  then opens a PR for it so it merges ahead of the branch it came from. Use
+  only when the user runs /land-first.
 disable-model-invocation: true
 ---
 

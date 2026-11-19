@@ -2,8 +2,8 @@
 name: walkthrough
 description: >-
   Walks the user through the code on a finished branch, explaining how it works
-  and flagging where the PR description has drifted from it. Use when the user
-  runs /walkthrough or asks to be walked through a branch or PR.
+  and   flagging where the PR description has drifted from it. Use only when the
+  user runs /walkthrough.
 disable-model-invocation: true
 ---
 
