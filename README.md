@@ -4,6 +4,17 @@ jwld's personal agent skills, loaded by Cursor from `~/.cursor/skills`. This
 file is the map: what lives where, how the pieces reach each other, and how to
 change one safely.
 
+## Requires mattpocock/skills
+
+Some of these skills build on [mattpocock/skills](https://github.com/mattpocock/skills),
+installed locally into `~/.agents/skills`. Where that install is missing, read
+each one from its upstream link instead.
+
+| Here | Uses from mattpocock/skills |
+| --- | --- |
+| `phased-implementation` | [`grill-with-docs`](https://github.com/mattpocock/skills/blob/main/skills/engineering/grill-with-docs/SKILL.md) to plan, overriding the question format of [`grilling`](https://github.com/mattpocock/skills/blob/main/skills/productivity/grilling/SKILL.md) |
+| Changing a skill (below) | [`writing-for-agents`](https://github.com/mattpocock/skills/blob/main/skills/productivity/writing-for-agents/SKILL.md) |
+
 ## Layout
 
 - `<name>/SKILL.md` is one skill. Its frontmatter `description` is the
@@ -72,8 +83,8 @@ Slash-only skills are marked `/`.
   `commit`, `verify.md` or `net-diff.md` lands in many skills at once.
 - Keep each rule in one place. When two skills need the same rule, move it to
   `shared/` and link it from both rather than copying it.
-- Write in the style of `writing-for-agents`
-  (`~/.agents/skills/writing-for-agents/SKILL.md`, a separate install outside
-  this repo); use `refine-skill` when the change comes from what a run taught.
+- Write in the style of `writing-for-agents` from mattpocock/skills
+  (`~/.agents/skills/writing-for-agents/SKILL.md`); use `refine-skill` when
+  the change comes from what a run taught.
 - Commit with the `commit` skill, and only when the user asks. The remote is
   `jwld/skills` on GitHub.

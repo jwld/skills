@@ -53,9 +53,11 @@ The deep dive runs on Opus, on the latest Opus the `Task` tool's model list
 offers (`claude-opus-5-5-high` today). When planning isn't on Opus, it runs on a
 subagent, briefed with the files and the skill path.
 
-Plan with the `grill-with-docs` skill, reading it from
-`~/.agents/skills/grill-with-docs/SKILL.md`. Planning is done once the user
-confirms the shared understanding it reaches.
+Plan with the `grill-with-docs` skill from mattpocock/skills, reading it from
+`~/.agents/skills/grill-with-docs/SKILL.md`, or from
+[upstream](https://github.com/mattpocock/skills/blob/main/skills/engineering/grill-with-docs/SKILL.md)
+where that isn't installed. Planning is done once the user confirms the shared
+understanding it reaches.
 
 Ask each grill round through the `AskQuestion` tool, one call carrying the
 whole frontier. The grilling skill's prose format is for other callers; here
