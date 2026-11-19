@@ -3,8 +3,8 @@ name: commit
 description: >-
   Writes git commit messages in the user's preferred style (an imperative title
   plus short bullets, never a prose body). Use whenever creating or amending a
-  commit, including when the user just says "commit", and when the user moves
-  on to a separate idea while finished work is still uncommitted.
+  commit, including when the user just says "commit", and to offer one when the
+  user moves on to a separate idea while finished work is still uncommitted.
 ---
 
 # Commit
@@ -13,8 +13,8 @@ Unstage anything already staged before reading the diff (`git restore --staged`)
 Start from the working tree.
 
 Follow the normal commit workflow. This skill governs the message, when to
-amend HEAD instead of opening a new commit, and when to commit finished work
-before a new idea (**When the user moves on**).
+amend HEAD instead of opening a new commit, and when to offer a commit of
+finished work before a new idea (**When the user moves on**).
 
 ## Branch
 
@@ -25,20 +25,20 @@ before a new idea (**When the user moves on**).
 
 ## When the user moves on
 
-The user moving on to a new request is the go-ahead to commit finished work
-still in the tree, when that work is a separate idea from the new request.
-Commit it before starting the new request.
+The user moving on to a new request, while finished work that's a separate
+idea from it is still in the tree, is the moment to offer a commit of that
+work. Separate means the new request would be its own commit under
+**Content**. A continuation of the same idea stays in the tree without an
+offer.
 
-Separate means the new request would be its own commit under **Content**. A
-continuation of the same idea stays in the tree.
-
-- Commit the finished idea being left behind, and only its changes. Unrelated
-  uncommitted work stays out of the commit.
-- A half-done edit, work the user is still steering, and leftover scrap stay
-  uncommitted.
-- Where the outstanding work holds more than one finished idea, commit each as
-  **Content** sets out, in that order.
-- Then do the new request.
+- Say the finished work is ready to commit, giving the title of each commit
+  you'd make, split as **Content** sets out. Then start the new request,
+  leaving the work uncommitted until the user says to commit it.
+- Offer only the finished idea being left behind. Unrelated uncommitted work,
+  a half-done edit, work the user is still steering, and leftover scrap stay
+  out of the offer.
+- On a yes, commit only the offered changes, leaving the new request's work in
+  the tree.
 
 ## Message shape
 
