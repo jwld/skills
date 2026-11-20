@@ -143,9 +143,10 @@ section's turn. One outside the scope is an aside for the report.
 Take the section's findings one at a time, as
 [shared/findings.md](../shared/findings.md) sets out.
 
-Close every message from here to the report with where the pass stands, as the
-section and finding numbers alone (`Section 1/8, Finding 2/5`) on the last
-line, leaving their names out. Keep it on a reply that only answers a tweak
+Once the first section opens, close every message up to the report with where
+the pass stands, as the section and finding numbers alone
+(`Section 1/8, Finding 2/5`) on the last line, leaving their names out. The
+messages before it, through steps 2 to 4, end without one. Keep it on a reply that only answers a tweak
 inside the finding too, so the user never has to work out which finding is
 open.
 
