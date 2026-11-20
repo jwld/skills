@@ -15,6 +15,10 @@ stack that could land on the default branch alone shouldn't wait for the
 feature. This skill retargets every such PR at the default branch, and relinks
 the stack for the PRs that still need the feature branch.
 
+A GitHub stack is only for PRs going into a feature branch. A PR whose parent
+is going into the default branch is chained onto it, its base set to the
+parent's branch, and never linked as a stack.
+
 It changes PR bases and stacks on GitHub, and leaves every branch as it is. A
 retargeted PR's diff carries whatever its branch holds that its new base
 doesn't, until the branch is rebased when its work is picked up.
@@ -72,8 +76,7 @@ feature branch stays there too.
 Two chains, each keeping the stack's order:
 
 - **Default chain** - the bottom PR targets the default branch, and each other
-  one the PR below it. It's linked as a stack of its own once it holds two or
-  more.
+  one the PR below it. It's left unlinked, however many it holds.
 - **Feature chain** - the bottom PR targets the feature branch, and each other
   one the PR below it, linked as a stack on the feature branch as trunk.
 
@@ -90,14 +93,13 @@ the base branch because the pull request is part of a stack"):
 1. `gh stack unstack <stack number>`. It takes the whole stack, and leaves
    every PR open.
 2. `gh pr edit <number> --base <new base>` for each PR whose base changed.
-3. `gh stack link --base <feature branch> <feature chain>`, and
-   `gh stack link <default chain>` where it holds two or more, passing PR
-   numbers bottom to top. A branch name makes `link` push it.
+3. `gh stack link --base <feature branch> <feature chain>`, passing PR numbers
+   bottom to top. A branch name makes `link` push it.
 4. Read `.stack` off each PR again to confirm the new shape.
 
 ### 5. Report
 
-- Each chain, its PRs linked bottom to top.
+- Each chain, its PRs bottom to top, the feature chain linked as a stack.
 - The PRs whose diff carries work from below until their branch is rebased.
 - PR descriptions that name an old base or stack position, offered to the
   `update-pr` skill ([update-pr/SKILL.md](../update-pr/SKILL.md)).

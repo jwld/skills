@@ -13,7 +13,7 @@ The user's own pass over a finished branch, often another author's work, before
 it merges. It looks for what `review-pr` looks for, but each finding the user
 agrees to is fixed and committed in the working tree rather than posted. The
 pass posts no comment, review or reply. GitHub changes only on the user's yes:
-to retargeting a stacked PR at the default branch, to handing the PR back after
+to retargeting a chained or stacked PR at the default branch, to handing the PR back after
 the deep dive, to the `update-pr` offer after each section, and to the closing
 label. A finding only the author can settle is held for `review-pr` to post.
 Every chat message the pass writes is succinct, as
@@ -59,8 +59,9 @@ say so and ask whether to pass over it as it stands.
 ### 2. Check whether it can land on master
 
 Where the PR's base isn't the default branch
-([shared/base-branch.md](../shared/base-branch.md)), it's part of a stack.
-Landing it on the default branch by itself is always preferable, so assess
+([shared/base-branch.md](../shared/base-branch.md)), it's chained onto a PR
+bound for the default branch, or stacked into a feature branch. Landing it on
+the default branch by itself is always preferable, so assess
 whether it can, from the whole PR whatever the scope:
 
 - **Leans on the base** - gather what the base adds over the default branch
@@ -68,7 +69,7 @@ whether it can, from the whole PR whatever the scope:
   thing the PR uses from it: a helper, a type, a migration, a renamed symbol, a
   file only the base adds.
 - **Ships alone** - name anything that would reach users half-built on the
-  default branch without the rest of the stack.
+  default branch without its base.
 
 Give the verdict in a line or two, with the reason:
 
@@ -82,7 +83,7 @@ Give the verdict in a line or two, with the reason:
   GitHub refuses that base change, so retarget it with the `reorganise-stack`
   skill ([reorganise-stack/SKILL.md](../reorganise-stack/SKILL.md)) instead.
 - **Part stands alone** - name the part. The report offers it to `land-first`.
-- **Needs the stack** - carry on.
+- **Needs its base** - carry on.
 
 ### 3. Deep dive for fundamental problems
 
