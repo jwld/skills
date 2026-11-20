@@ -38,6 +38,10 @@ the one whose next run it changes.
 - Amend the rule the skill already has, in that skill's voice. A new rule earns
   a place only when nothing there covers it.
 - Phrase it as what to do next time.
+- Keep it generic, since the skills repo is public: no secrets, env values,
+  internal URLs, customer or record names, or code and logs lifted from the
+  repo the run was in. Point at a private repo's convention by the file it
+  lives in rather than copying it across.
 - Leave the edit uncommitted.
 - Tell the user in the same turn: name the skill, say what changed in a
   sentence, and quote the wording that landed. The edit is already made by
