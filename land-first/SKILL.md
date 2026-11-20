@@ -25,9 +25,9 @@ the new branch for its PR.
 ```
 - [ ] 1. Record the source branch
 - [ ] 2. Pin down the piece
-- [ ] 3. Plan it
-- [ ] 4. Open the issue
-- [ ] 5. Branch off master
+- [ ] 3. Branch off master
+- [ ] 4. Plan it
+- [ ] 5. Open the issue
 - [ ] 6. Carry the piece over
 - [ ] 7. Verify it stands alone
 - [ ] 8. Wrap up and open the PR
@@ -76,7 +76,19 @@ the source branch adds: a helper, a type, a migration, a renamed symbol. Name
 each one it leans on. Whether to bring it along, rework the piece around it, or
 stop is the first thing the plan settles.
 
-### 3. Plan it
+### 3. Branch off master
+
+Switch to the new branch before planning, so the rest of the run happens on
+it:
+
+- `git fetch origin <default>`, then
+  `git switch --no-track -c <name> origin/<default>`, the default branch as
+  [shared/base-branch.md](../shared/base-branch.md) sets out. Without
+  `--no-track` the new branch tracks `origin/<default>`, so a bare push or pull
+  aims at the default branch.
+- Name it after the piece, as [shared/branch-name.md](../shared/branch-name.md) sets out.
+
+### 4. Plan it
 
 Follow `phased-implementation`'s **Plan** step with the piece as the work, its
 model gate, plan mode and grill included. The plan settles what the piece
@@ -89,7 +101,7 @@ splits that into phases:
   Where the piece is whole commits and nothing needs reworking, the plan has no
   phases: say so.
 
-### 4. Open the issue
+### 5. Open the issue
 
 Open it as `phased-implementation`'s **Ask whether to open an issue** step
 sets out, before anything is carried over. It's work under way, so assign
@@ -114,19 +126,10 @@ Point at the source PR, else its issue, else the source branch name in
 backticks. Leave the line out when the piece is unrelated work that was only
 written on the source branch, such as a fix caught in passing.
 
-### 5. Branch off master
-
-Leave plan mode with `SwitchMode`, then branch here rather than as
-`phased-implementation` would:
-
-- `git fetch origin <default>`, then
-  `git switch --no-track -c <name> origin/<default>`, the default branch as
-  [shared/base-branch.md](../shared/base-branch.md) sets out. Without
-  `--no-track` the new branch tracks `origin/<default>`, so a bare push or pull
-  aims at the default branch.
-- Name it after the piece, as [shared/branch-name.md](../shared/branch-name.md) sets out.
-
 ### 6. Carry the piece over
+
+Leave plan mode with `SwitchMode`, staying on the branch from step 3 rather
+than opening one as `phased-implementation` would.
 
 **Whole commits** first: `git cherry-pick` them, oldest first. Resolve a
 conflict only where the intent is unambiguous: one side changed, import
@@ -154,7 +157,7 @@ Run `phased-implementation`'s **Wrap up** step once step 7 passes, opening the
 PR before its `update-issue` call, so the issue's plan can link it.
 
 Open the PR with the `open-pr` skill ([open-pr/SKILL.md](../open-pr/SKILL.md)).
-When step 4 wrote the `In advance of` line for the PR, put it on its own line
+When step 5 wrote the `In advance of` line for the PR, put it on its own line
 above `## AI Summary`.
 
 ### 9. Stay on the new branch and report
@@ -163,6 +166,6 @@ Finish on the new branch. Leave the source branch's commits as they are, and
 don't rebase it.
 
 Reply succinctly, as [shared/succinct.md](../shared/succinct.md) sets out, with
-the PR URL, and the issue URL when step 4 opened one, plus anything the plan
+the PR URL, and the issue URL when step 5 opened one, plus anything the plan
 brought along from the source branch. When step 2 scanned, list the
 candidates left behind. When step 1 committed, list those commits.
