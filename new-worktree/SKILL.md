@@ -53,7 +53,8 @@ Done when `git worktree list` shows `<path>`.
 
 ### 2. Set it up
 
-A worktree starts with tracked files only: no `node_modules`, no `.env` files.
+A worktree starts with tracked files only: no `node_modules`, no `.env` files,
+no gitignored generated code.
 
 - **The repo has `.cursor/worktrees.json`** - Cursor runs it only for
   worktrees it creates itself, so run it here. Take `setup-worktree-unix`,
@@ -63,7 +64,12 @@ A worktree starts with tracked files only: no `node_modules`, no `.env` files.
 - **Otherwise** - copy the ignored env files across from the main checkout,
   then install dependencies with the package manager whose lockfile sits at
   the root, frozen to that lockfile (`pnpm install --frozen-lockfile`,
-  `npm ci`), plus any fresh-clone setup the repo's `AGENTS.md` names.
+  `npm ci`), plus any fresh-clone setup the repo's `AGENTS.md` names. Then
+  run the repo's codegen (a root `generate` script, or whatever its
+  `AGENTS.md` files say to run after switching branch). Until it runs, every
+  import of the generated code fails to resolve, so a lint autofix rewrites
+  files it shouldn't touch (an import-order rule moves them all) and a
+  typecheck fails for no real reason.
 
 ```bash
 cd <main checkout>
@@ -71,6 +77,13 @@ git ls-files -oi --exclude-standard -- '*.env*' ':!:*node_modules*' | while read
   mkdir -p "<path>/$(dirname "$f")" && cp "$f" "<path>/$f"
 done
 ```
+
+The copied env files point every worktree at the same local databases, so a
+test run whose setup recreates its database drops the connections of a run in
+another worktree. A spec failing on a terminated connection
+(`terminating connection due to administrator command`) while another
+worktree's tests run is that collision, not the change: rerun it once the
+other run finishes.
 
 When a setup command fails, stop and show its error. The worktree stays, for
 the user to decide on.
