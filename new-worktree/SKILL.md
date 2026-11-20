@@ -119,5 +119,5 @@ has one (`gh pr list --head <branch> --json url --jq '.[0].url'`).
 
 ## Tear down
 
-The `teardown-worktree` skill removes a worktree once its PR has merged
-([teardown-worktree/SKILL.md](../teardown-worktree/SKILL.md)).
+The user runs `/teardown` in a worktree's window once its PR has merged
+([teardown/SKILL.md](../teardown/SKILL.md)).
