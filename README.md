@@ -62,7 +62,7 @@ Slash-only skills are marked `/`.
 | `net-diff.md` | Gathering the net branch diff against its parent |
 | `output.md` | Laying out what a skill writes (no hard wraps, short hyphens) |
 | `pending-review.md` | Reading your pending review on a PR |
-| `pr-labels.md` | The `[PR]` stage labels, their write-up audiences, and moving a PR between them |
+| `pr-labels.md` | The `[PR]` labels, their write-up audiences, and moving a PR between review stages |
 | `public-text.md` | Showing text that posts under the user's name before it goes up |
 | `reading-order.md` | The order a branch is read in, file by file or by section |
 | `review-passes.md` | What a review looks for, whatever it does with the findings |

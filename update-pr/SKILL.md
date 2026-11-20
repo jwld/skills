@@ -55,7 +55,8 @@ step ([open-pr/SKILL.md](../open-pr/SKILL.md)). The refreshed write-up gains a
 - Read the current title, body, and labels with `gh pr view`.
 - In propertywerks, take the audience from the `[PR]` label the PR carries, as
   [shared/pr-labels.md](../shared/pr-labels.md) maps them. Don't ask; ask only
-  when the PR carries none of them.
+  when the PR carries none of them. When the audience is leave as is, skip
+  the rest of this step.
 - The exception is a PR labelled `[PR] needs review` and assigned to the user
   (`gh pr view --json assignees`, against `gh api user --jq .login`). Ask with
   `AskQuestion` whether it's now ready for merge. On a yes, move it to

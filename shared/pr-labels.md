@@ -1,10 +1,13 @@
-# PR stage labels
+# PR labels
 
-The `[PR]` labels that track a PR through review, and how a skill moves one.
-Pointed at, never copied.
+The `[PR]` labels, their write-up audiences, and how a skill moves a review
+stage. Pointed at, never copied.
 
 Only in the `propertywerks` GitHub org. Check the remote owner, and skip every
 label step anywhere else.
+
+A PR already carrying one of the labels below takes its write-up audience
+from it, so a later pass reads the label rather than asking.
 
 ## Stages
 
@@ -17,9 +20,15 @@ audience it maps to:
   `[PR] needs final pass` and `[PR] in final pass` - human review
 - `[PR] ready for merge` - historical reference
 
-A PR already carrying one takes its write-up audience from it, so a later pass
-reads the label rather than asking. The repo's `docs/conventions/github.md`
-sets the reviewer and assignee a PR opens with.
+The repo's `docs/conventions/github.md` sets the reviewer and assignee a PR
+opens with.
+
+## Feature
+
+`[PR] feature` holds the reviewed work so it can merge into master at once.
+Local work is a branch stacked into it, never a checkout of that branch.
+Write-up audience is leave as is: keep the existing title and body, and skip
+`write-up-branch`.
 
 ## Moving a PR on
 
