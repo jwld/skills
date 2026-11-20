@@ -4,6 +4,25 @@ jwld's personal agent skills, loaded by Cursor from `~/.cursor/skills`. This
 file is the map: what lives where, how the pieces reach each other, and how to
 change one safely.
 
+## Install and use
+
+Clone the repo into the folder Cursor loads personal skills from, then install
+[mattpocock/skills](#requires-mattpocockskills), which some of these build on.
+Many skills drive GitHub through `gh`, so sign it in too.
+
+```bash
+git clone https://github.com/jwld/skills.git ~/.cursor/skills
+npx skills add mattpocock/skills -g
+gh auth login
+```
+
+Open a new chat to pick them up. A model-invoked skill runs when a request
+matches it ("commit this", "open a PR"). A slash-only one, marked `/` in the
+[Index](#index), runs when you type it (`/deep-dive`). [Invocation](#invocation)
+has the detail.
+
+To update, `git -C ~/.cursor/skills pull` and `npx skills update -g`.
+
 ## Requires mattpocock/skills
 
 Some of these skills build on [mattpocock/skills](https://github.com/mattpocock/skills),
