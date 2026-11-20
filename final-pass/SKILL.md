@@ -27,7 +27,7 @@ say so and ask whether to pass over it as it stands.
 
 ```
 - [ ] 1. Open the branch
-- [ ] 2. Orient, then section the branch
+- [ ] 2. Section the branch, then summarise it
 - [ ] 3. Review the section
 - [ ] 4. Work its findings
 - [ ] 5. Look through the section
@@ -51,12 +51,25 @@ say so and ask whether to pass over it as it stands.
 - Work from the net diff vs the parent, gathered as
   [shared/net-diff.md](../shared/net-diff.md) sets out, narrowed to the scope.
 
-### 2. Orient, then section the branch
+### 2. Section the branch, then summarise it
 
-Follow the `orient` skill ([orient/SKILL.md](../orient/SKILL.md)), then split the
-scope into sections as the **Sections** in
-[shared/reading-order.md](../shared/reading-order.md) set out, in the **Order** there.
-Don't ask where to begin: say the order and start on the first section, leaving
+Work out the areas and their sizes as the `orient` skill
+([orient/SKILL.md](../orient/SKILL.md)) does, without writing its output. Split
+the scope into sections as the **Sections** in
+[shared/reading-order.md](../shared/reading-order.md) set out, in the **Order**
+there.
+
+Open with a succinct summary, enough for the user to judge whether to change
+the order and nothing more:
+
+- A sentence or two on what the branch does, linking the PR.
+- A bullet per section, in review order: its name, what it covers in a clause,
+  its rough size, and why it sits there (what it builds on, what builds on it,
+  or that the PR's suggested order puts it there). Generated and mechanical
+  churn gets one bullet.
+- The file count, checked as below.
+
+Don't ask where to begin: start on the first section after the summary, leaving
 the user to redirect.
 
 The user ticks off each file in the PR's **Files changed** tab as they go, so
