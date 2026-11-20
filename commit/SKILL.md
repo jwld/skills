@@ -18,9 +18,10 @@ finished work before a new idea (**When the user moves on**).
 
 ## Branch
 
-- On a protected `master`, as [shared/branch-name.md](../shared/branch-name.md)
-  sets out, switch to a new branch first (`git switch -c`), named as that
-  fragment sets out, then commit there.
+- On a detached HEAD, or a protected `master` as
+  [shared/branch-name.md](../shared/branch-name.md) sets out, switch to a new
+  branch first (`git switch -c`), named as that fragment sets out, then commit
+  there.
 - On any other branch, commit where you are.
 
 ## When the user moves on
