@@ -87,12 +87,14 @@ Give the verdict in a line or two, with the reason:
 
 ### 3. Deep dive for fundamental problems
 
-Before sectioning, run the `deep-dive` skill
-([deep-dive/SKILL.md](../deep-dive/SKILL.md)) over the scope. A problem is
-fundamental when the rest of the pass would be reviewing on top of it: the
-wrong approach, a broken data model, a misread requirement, anything whose fix
-rewrites code across several sections. Report only those. The deep dive's
-other findings wait for their sections' reviews.
+Before sectioning, ask the user to run `/deep-dive` themselves over the scope,
+and wait. Don't run the `deep-dive` skill yourself.
+
+From its findings, pick out the fundamental problems. A problem is fundamental
+when the rest of the pass would be reviewing on top of it: the wrong approach,
+a broken data model, a misread requirement, anything whose fix rewrites code
+across several sections. The deep dive's other findings wait for their
+sections' reviews.
 
 Where there are none, say so in a line and move on. Otherwise, weigh how much
 rework they add up to and put the choice to the user as a numbered choice, as
