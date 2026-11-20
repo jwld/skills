@@ -60,7 +60,7 @@ no gitignored generated code.
   worktrees it creates itself, so run it here. Take `setup-worktree-unix`,
   else `setup-worktree`: an array of commands, or a script path relative to
   the JSON file. Run them in the worktree with `ROOT_WORKTREE_PATH` set to the
-  main checkout. That is the whole step.
+  main checkout, in place of the copy, install and codegen below.
 - **Otherwise** - copy the ignored env files across from the main checkout,
   then install dependencies with the package manager whose lockfile sits at
   the root, frozen to that lockfile (`pnpm install --frozen-lockfile`,
@@ -78,12 +78,25 @@ git ls-files -oi --exclude-standard -- '*.env*' ':!:*node_modules*' | while read
 done
 ```
 
-The copied env files point every worktree at the same local databases, so a
-test run whose setup recreates its database drops the connections of a run in
-another worktree. A spec failing on a terminated connection
-(`terminating connection due to administrator command`) while another
-worktree's tests run is that collision, not the change: rerun it once the
-other run finishes.
+Either way, give the worktree databases of its own, so a migration or test run
+in one worktree never resets another's. Suffix the database name in every
+local database URL in the worktree's env files with `_wt<n>`, its slot number,
+leaving every remote URL as it is:
+
+```bash
+cd <path>
+git ls-files -oi --exclude-standard -- '*.env*' ':!:*node_modules*' | xargs sed -E -i '' \
+  's#(postgres(ql)?://([^/@]*@)?(localhost|127\.0\.0\.1)(:[0-9]+)?/)([A-Za-z0-9_]+)#\1\6_wt<n>#g'
+```
+
+- Keep the `wt` in the suffix. A bare `_<n>` can land on a name the repo's
+  tooling derives from the main checkout's database (a test runner cloning it
+  once per worker as `<name>_<worker>`).
+- The suffixed databases are new, or still hold an earlier worktree's schema
+  from the same slot. Name the repo's command that resets the local databases
+  (a reset, not a migrate, which trips over that leftover schema) in the
+  reply, for the user to run in the new window where the repo's `AGENTS.md`
+  keeps database writes to them. Run it here otherwise.
 
 When a setup command fails, stop and show its error. The worktree stays, for
 the user to decide on.
@@ -95,8 +108,8 @@ Done when every setup command exits 0.
 `cursor -n --classic <path>` opens it in a new editor window; `--classic`
 keeps it out of the Agents Window.
 
-Reply with the path, what it's checked out on, what setup ran, and that the
-window is open.
+Reply with the path, what it's checked out on, what setup ran, the database
+command left for the user if there is one, and that the window is open.
 
 ## List
 
