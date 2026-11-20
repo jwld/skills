@@ -13,9 +13,9 @@ The user's own pass over a finished branch, often another author's work, before
 it merges. It looks for what `review-pr` looks for, but each finding the user
 agrees to is fixed and committed in the working tree rather than posted. The
 pass posts no comment, review or reply. GitHub changes only on the user's yes:
-to handing the PR back after the deep dive, to the `update-pr` offer after each
-section, and to the closing label. A finding only the author can settle is held
-for `review-pr` to post.
+to retargeting a stacked PR at the default branch, to handing the PR back after
+the deep dive, to the `update-pr` offer after each section, and to the closing
+label. A finding only the author can settle is held for `review-pr` to post.
 
 ## Scope
 
@@ -28,14 +28,15 @@ say so and ask whether to pass over it as it stands.
 
 ```
 - [ ] 1. Open the branch
-- [ ] 2. Deep dive for fundamental problems
-- [ ] 3. Section the branch, then summarise it
-- [ ] 4. Review the section
-- [ ] 5. Work its findings
-- [ ] 6. Look through the section
-- [ ] 7. Document the section's fixes
-- [ ] 8. Next section, back to 4
-- [ ] 9. Report
+- [ ] 2. Check whether it can land on master
+- [ ] 3. Deep dive for fundamental problems
+- [ ] 4. Section the branch, then summarise it
+- [ ] 5. Review the section
+- [ ] 6. Work its findings
+- [ ] 7. Look through the section
+- [ ] 8. Document the section's fixes
+- [ ] 9. Next section, back to 5
+- [ ] 10. Report
 ```
 
 ### 1. Open the branch
@@ -53,7 +54,32 @@ say so and ask whether to pass over it as it stands.
 - Work from the net diff vs the parent, gathered as
   [shared/net-diff.md](../shared/net-diff.md) sets out, narrowed to the scope.
 
-### 2. Deep dive for fundamental problems
+### 2. Check whether it can land on master
+
+Where the PR's base isn't the default branch
+([shared/base-branch.md](../shared/base-branch.md)), it's part of a stack.
+Landing it on the default branch by itself is always preferable, so assess
+whether it can, from the whole PR whatever the scope:
+
+- **Leans on the base** - gather what the base adds over the default branch
+  (`git log` and `git diff origin/<default>...origin/<base>`), and name each
+  thing the PR uses from it: a helper, a type, a migration, a renamed symbol, a
+  file only the base adds.
+- **Ships alone** - name anything that would reach users half-built on the
+  default branch without the rest of the stack.
+
+Give the verdict in a line or two, with the reason:
+
+- **Stands alone** - recommend retargeting, and wait. On a yes, run the
+  `rebase` skill ([rebase/SKILL.md](../rebase/SKILL.md)) onto the default
+  branch, with `git rebase --onto origin/<default> <fork point with base>` so
+  the base's commits stay behind, rather than its **Stacked branches**. Once
+  it pushes, retarget with `gh pr edit --base <default>`, then gather the net
+  diff afresh against the new base.
+- **Part stands alone** - name the part. The report offers it to `land-first`.
+- **Needs the stack** - carry on.
+
+### 3. Deep dive for fundamental problems
 
 Before sectioning, run the `deep-dive` skill
 ([deep-dive/SKILL.md](../deep-dive/SKILL.md)) over the scope. A problem is
@@ -67,16 +93,16 @@ rework they add up to and put the choice to the user as a numbered choice, as
 [shared/choices.md](../shared/choices.md) sets out:
 
 - **Hand back** - the rework is substantial enough for the author to do it.
-  Hold every fundamental problem as step 5 holds an author's finding, and run
+  Hold every fundamental problem as step 6 holds an author's finding, and run
   the `review-pr` skill ([review-pr/SKILL.md](../review-pr/SKILL.md)) to post
   them. Its submit step hands the PR back to the author, and the pass ends
   there, with no sections.
 - **Fix first** - work them as [shared/findings.md](../shared/findings.md) sets
-  out before sectioning, holding any only the author can settle as step 5 does.
+  out before sectioning, holding any only the author can settle as step 6 does.
   Each fix counts among the fixes of the section its files fall in, for that
   section's documentation.
 
-### 3. Section the branch, then summarise it
+### 4. Section the branch, then summarise it
 
 Work out the areas and their sizes as the `orient` skill
 ([orient/SKILL.md](../orient/SKILL.md)) does, without writing its output. Split
@@ -104,13 +130,13 @@ than from what the net diff reads: lockfiles, generated files, renames and
 deletions all count. Before the first section, check that the files across the
 sections add up to the list's count, and say the count with the order.
 
-### 4. Review the section
+### 5. Review the section
 
 Run every pass in [shared/review-passes.md](../shared/review-passes.md) over the section's
 files, checks included. A finding in another section's files waits for that
 section's turn. One outside the scope is an aside for the report.
 
-### 5. Work its findings
+### 6. Work its findings
 
 Take the section's findings one at a time, as
 [shared/findings.md](../shared/findings.md) sets out.
@@ -127,7 +153,7 @@ than a final pass's to fix. Say so when it comes up, then hold it with its file,
 lines and point in a line. The comment's wording is agreed later, in
 `review-pr`.
 
-### 6. Look through the section
+### 7. Look through the section
 
 Once a section's last finding is ticked off, commit its held stylistic fixes as
 one commit, following the `commit` skill ([commit/SKILL.md](../commit/SKILL.md)).
@@ -136,10 +162,10 @@ Then list the code the section covered, so the user can look through it for anyt
 file, with the line ranges in it where the section holds only part of the
 file. Mark the files this section finishes, so the user knows which to tick
 off on GitHub. Wait until they say they're done with it. A problem they raise
-becomes a further finding of the same section, worked as step 5 sets out, and
+becomes a further finding of the same section, worked as step 6 sets out, and
 the list comes round again once it's ticked off.
 
-### 7. Document the section's fixes
+### 8. Document the section's fixes
 
 Every fix the section made is a mistake nothing steered the branch's author
 away from. Run the `documentation` skill ([documentation/SKILL.md](../documentation/SKILL.md))
@@ -152,7 +178,7 @@ time and the next final pass has less to fix.
 - Leave its edits uncommitted beside the section's held fixes, and stay on them
   until the user says they're done, as for a finding.
 
-### 8. Next section, back to 4
+### 9. Next section, back to 5
 
 Offer to run the `update-pr` skill ([update-pr/SKILL.md](../update-pr/SKILL.md)),
 which commits the section's doc edits and any fixes still held before it
@@ -160,9 +186,13 @@ pushes, so a yes commits them now rather than at the report. Wait for the answer
 on as the **Sections** in
 [shared/reading-order.md](../shared/reading-order.md) set out.
 
-### 9. Report
+### 10. Report
 
 - Confirm that a section finished every file in the list, naming any it didn't.
+- Where step 2 found a part that stands alone, offer to land it on the default
+  branch with the `land-first` skill ([land-first/SKILL.md](../land-first/SKILL.md)).
+  Where it retargeted the PR, name the open PRs based on its branch
+  (`gh pr list --base <head>`), which need rebasing onto it.
 - Offer the held stylistic fixes as one commit, if any are still waiting.
 - List what was fixed, by section, each with whether it was committed and the
   doc edit it led to, if any.
