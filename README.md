@@ -23,6 +23,21 @@ has the detail.
 
 To update, `git -C ~/.cursor/skills pull` and `npx skills update -g`.
 
+## Most used
+
+Start with these, the skills that run most, most-used first.
+
+| Skill | What it does |
+| --- | --- |
+| `commit` | Writes commits as an imperative title and short bullets, one commit per idea |
+| `/documentation` | Updates agent docs and comments after a piece of work, so the next agent gets it right first time |
+| `update-pr` | Pushes, syncs the linked issue, and refreshes the PR write-up once it's stale |
+| `/deep-dive` | Lists the logic errors and inconsistencies on a finished branch, blockers first |
+| `/phased-implementation` | Plans a piece of work, then builds it a phase at a time, each reviewed before it's committed |
+| `push` | Commits what's uncommitted, then pushes, with force with lease only after a rewrite |
+| `open-pr` | Finds or opens the issue, writes up the branch, and opens the PR |
+| `rebase` | Rebases a branch or a whole stack, then brings it in line with the conventions the base gained |
+
 ## Requires mattpocock/skills
 
 Some of these skills build on [mattpocock/skills](https://github.com/mattpocock/skills),
