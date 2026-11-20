@@ -16,6 +16,8 @@ pass posts no comment, review or reply. GitHub changes only on the user's yes:
 to retargeting a stacked PR at the default branch, to handing the PR back after
 the deep dive, to the `update-pr` offer after each section, and to the closing
 label. A finding only the author can settle is held for `review-pr` to post.
+Every chat message the pass writes is succinct, as
+[shared/succinct.md](../shared/succinct.md) sets out.
 
 ## Scope
 
@@ -188,22 +190,27 @@ on as the **Sections** in
 
 ### 10. Report
 
-- Confirm that a section finished every file in the list, naming any it didn't.
-- Where step 2 found a part that stands alone, offer to land it on the default
-  branch with the `land-first` skill ([land-first/SKILL.md](../land-first/SKILL.md)).
-  Where it retargeted the PR, name the open PRs based on its branch
+The user watched every finding, so the report names things rather than
+explaining them, as [shared/succinct.md](../shared/succinct.md) sets out:
+
+- The files from the list that no section finished, if any.
+- What was fixed, a line per fix by section: committed or held, and its doc
+  edit.
+- The findings dropped, held for the author, and asides, a line each.
+- Where step 2 retargeted the PR, the open PRs based on its branch
   (`gh pr list --base <head>`), which need rebasing onto it.
-- Offer the held stylistic fixes as one commit, if any are still waiting.
-- List what was fixed, by section, each with whether it was committed and the
-  doc edit it led to, if any.
-- List the findings the user dropped, and the asides the passes turned up.
-- List the findings held for the author, and offer to post them with the
-  `review-pr` skill ([review-pr/SKILL.md](../review-pr/SKILL.md)). Its submit step
-  writes the summary and hands the PR back to the author.
-- Where nothing was held, in propertywerks, ask whether to move the PR to
-  `[PR] ready for merge`. On a yes, and once the pass's fixes are pushed, move
-  it as [shared/pr-labels.md](../shared/pr-labels.md) sets out, and leave the
-  assignees and reviews alone.
-- Where another author wrote the branch, offer to summarise the pass for them
-  with the `changes` skill ([changes/SKILL.md](../changes/SKILL.md)). Leave pushing
-  to the user.
+
+Close with the offers that apply, together. Leave pushing to the user.
+
+- Commit the held stylistic fixes as one commit.
+- Land the part step 2 found standing alone, with the `land-first` skill
+  ([land-first/SKILL.md](../land-first/SKILL.md)).
+- Post the held findings with the `review-pr` skill
+  ([review-pr/SKILL.md](../review-pr/SKILL.md)), whose submit step hands the PR
+  back to the author.
+- Where nothing was held, in propertywerks, move the PR to
+  `[PR] ready for merge` once the pass's fixes are pushed, as
+  [shared/pr-labels.md](../shared/pr-labels.md) sets out, leaving the assignees
+  and reviews alone.
+- Where another author wrote the branch, summarise the pass for them with the
+  `changes` skill ([changes/SKILL.md](../changes/SKILL.md)).

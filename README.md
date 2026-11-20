@@ -66,6 +66,7 @@ Slash-only skills are marked `/`.
 | `public-text.md` | Showing text that posts under the user's name before it goes up |
 | `reading-order.md` | The order a branch is read in, file by file or by section |
 | `review-passes.md` | What a review looks for, whatever it does with the findings |
+| `succinct.md` | Keeping chat messages to the user short (not GitHub write-ups) |
 | `uncommitted.md` | Uncommitted work before a skill starts: commit it, or ask to commit or stash |
 | `verify.md` | Proving a change with narrow lint, typecheck and test runs |
 
