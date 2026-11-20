@@ -21,6 +21,8 @@ fix.
 
 ## Present the finding
 
+Succinct, as [succinct.md](succinct.md) sets out:
+
 - The problem: where (the file and function, with line numbers), what's wrong,
   and what it causes.
 - The fix. Offer more than one only where they differ in something the user

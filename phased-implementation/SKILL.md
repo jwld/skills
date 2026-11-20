@@ -144,7 +144,8 @@ sets out.
 
 ### 5. Stop for review
 
-End the turn here for review. In the same message:
+End the turn here for review. In the same message, succinct as
+[shared/succinct.md](../shared/succinct.md) sets out:
 
 - One or two sentences on the changes made.
 - Where the phase deviates from the plan, or the code is unusual, a section

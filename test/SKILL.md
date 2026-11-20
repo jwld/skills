@@ -100,5 +100,7 @@ the one in the group that owns the branch.
 
 ### 5. Report
 
+Succinct, as [shared/succinct.md](../shared/succinct.md) sets out:
+
 - The subject's branch coverage, and any branch left uncovered with the reason.
 - Each gap raised in step 2, and what the user chose.

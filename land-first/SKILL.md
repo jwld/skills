@@ -162,6 +162,7 @@ above `## AI Summary`.
 Finish on the new branch. Leave the source branch's commits as they are, and
 don't rebase it.
 
-Reply with the PR URL, and the issue URL when step 4 opened one, plus anything
-the plan brought along from the source branch. When step 2 scanned, list the
+Reply succinctly, as [shared/succinct.md](../shared/succinct.md) sets out, with
+the PR URL, and the issue URL when step 4 opened one, plus anything the plan
+brought along from the source branch. When step 2 scanned, list the
 candidates left behind. When step 1 committed, list those commits.

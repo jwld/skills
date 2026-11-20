@@ -30,9 +30,8 @@ belong to the reviews that ask for them.
 
 ## Output
 
-- Report the logic findings and nothing else. The checks behind them stay out of
-  the write-up: no list of what was verified and found fine, no typecheck / lint
-  / test summary, no recap of the review process.
+- Report the logic findings and nothing else, succinct as
+  [shared/succinct.md](../shared/succinct.md) sets out.
 - Leave out a finding a pending comment already makes. Where one goes further
   than a pending comment, name the comment it builds on.
 - Where the review shows a pending comment is wrong, or the code it's about has
@@ -43,6 +42,4 @@ belong to the reviews that ask for them.
 - Order findings by consequence, and make clear which are blockers and which are
   nits.
 - Give each finding a file and what is actually wrong, not a category.
-- Keep each one to the few lines it takes to act on, with no restating of the
-  fix in prose once it's clear.
 - Close by offering to fix the logic findings.

@@ -123,6 +123,7 @@ idea:
 
 ### 7. Report
 
-Give the URLs: each comment, each issue whose outstanding work changed, each PR
+Succinct, as [shared/succinct.md](../shared/succinct.md) sets out. Give the
+URLs: each comment, each issue whose outstanding work changed, each PR
 that gained the notice, and each new issue. Say what each one records in a
 line, and name anything left unrecorded.

@@ -158,7 +158,8 @@ PR goes straight to step 5.
 - Implement the response they chose, on the PR's head branch, and verify
   it as
   [shared/verify.md](../shared/verify.md) sets out.
-- Stop for review: explain the change and point at the files that matter. Don't
+- Stop for review: explain the change and point at the files that matter,
+  succinct as [shared/succinct.md](../shared/succinct.md) sets out. Don't
   commit yet.
 - On the go ahead, commit with the `commit` skill
   ([commit/SKILL.md](../commit/SKILL.md)). Leave pushing to the user; a commit is

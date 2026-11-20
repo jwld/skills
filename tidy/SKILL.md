@@ -148,6 +148,8 @@ touched logic a suite covers.
 
 ### 6. Report
 
+Succinct, as [shared/succinct.md](../shared/succinct.md) sets out:
+
 - What changed, by file, one line each.
 - Bugs fixed and dead code deleted, listed on their own. They're the only edits
   that changed behaviour, so they're the ones to review as changes.

@@ -39,6 +39,8 @@ sets out.
 
 ### 4. Report
 
+Succinct, as [shared/succinct.md](../shared/succinct.md) sets out:
+
 - Offer the held stylistic fixes as one commit, if any are waiting.
 - List what was fixed, each with whether it was committed.
 - List the findings the user dropped, and the asides about callers and

@@ -16,8 +16,7 @@ the way it did.
   number. Thinking doesn't count, because the user never sees it.
 - The options are the only numbered list in the message. Name anything else in
   prose, or the message reads as twice the options.
-- Keep the case short. On Opus, which runs long, draft it, then cut anything
-  the choice doesn't turn on.
+- Keep the case succinct, as [succinct.md](succinct.md) sets out.
 
 ## The question tool
 

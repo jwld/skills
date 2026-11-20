@@ -1,7 +1,7 @@
 # Doc report
 
 The report after a pass over agent docs, comments or ADRs. Pointed at, never
-copied.
+copied. Succinct, as [succinct.md](succinct.md) sets out.
 
 - Group by file. For each, say whether it was wrong, missing, misplaced,
   overlong, or no longer needed.

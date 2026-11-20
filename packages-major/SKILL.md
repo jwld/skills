@@ -93,8 +93,7 @@ jumps. Then an entry each for the rest:
 - The call sites that have to change.
 - Any blocker holding it.
 
-Keep an entry to the few lines it takes to decide with. No changelog tours, no
-restating a break the repo doesn't hit, no summary of what you checked and found
-fine.
+Keep it succinct, as [shared/succinct.md](../shared/succinct.md) sets out: no
+changelog tours, and no restating a break the repo doesn't hit.
 
 Close by offering to proceed, starting with the top item.
