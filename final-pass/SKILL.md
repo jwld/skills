@@ -77,7 +77,10 @@ Give the verdict in a line or two, with the reason:
   branch, with `git rebase --onto origin/<default> <fork point with base>` so
   the base's commits stay behind, rather than its **Stacked branches**. Once
   it pushes, retarget with `gh pr edit --base <default>`, then gather the net
-  diff afresh against the new base.
+  diff afresh against the new base. Where the PR sits in a GitHub stack
+  (`gh api repos/<owner>/<repo>/pulls/<number> --jq .stack` isn't null),
+  GitHub refuses that base change, so retarget it with the `reorganise-stack`
+  skill ([reorganise-stack/SKILL.md](../reorganise-stack/SKILL.md)) instead.
 - **Part stands alone** - name the part. The report offers it to `land-first`.
 - **Needs the stack** - carry on.
 
