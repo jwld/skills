@@ -13,8 +13,9 @@ The user's own pass over a finished branch, often another author's work, before
 it merges. It looks for what `review-pr` looks for, but each finding the user
 agrees to is fixed and committed in the working tree rather than posted. The
 pass posts no comment, review or reply. GitHub changes only on the user's yes:
-to the `update-pr` offer after each section, and to the closing label. A
-finding only the author can settle is held for `review-pr` to post.
+to handing the PR back after the deep dive, to the `update-pr` offer after each
+section, and to the closing label. A finding only the author can settle is held
+for `review-pr` to post.
 
 ## Scope
 
@@ -27,13 +28,14 @@ say so and ask whether to pass over it as it stands.
 
 ```
 - [ ] 1. Open the branch
-- [ ] 2. Section the branch, then summarise it
-- [ ] 3. Review the section
-- [ ] 4. Work its findings
-- [ ] 5. Look through the section
-- [ ] 6. Document the section's fixes
-- [ ] 7. Next section, back to 3
-- [ ] 8. Report
+- [ ] 2. Deep dive for fundamental problems
+- [ ] 3. Section the branch, then summarise it
+- [ ] 4. Review the section
+- [ ] 5. Work its findings
+- [ ] 6. Look through the section
+- [ ] 7. Document the section's fixes
+- [ ] 8. Next section, back to 4
+- [ ] 9. Report
 ```
 
 ### 1. Open the branch
@@ -51,7 +53,30 @@ say so and ask whether to pass over it as it stands.
 - Work from the net diff vs the parent, gathered as
   [shared/net-diff.md](../shared/net-diff.md) sets out, narrowed to the scope.
 
-### 2. Section the branch, then summarise it
+### 2. Deep dive for fundamental problems
+
+Before sectioning, run the `deep-dive` skill
+([deep-dive/SKILL.md](../deep-dive/SKILL.md)) over the scope. A problem is
+fundamental when the rest of the pass would be reviewing on top of it: the
+wrong approach, a broken data model, a misread requirement, anything whose fix
+rewrites code across several sections. Report only those. The deep dive's
+other findings wait for their sections' reviews.
+
+Where there are none, say so in a line and move on. Otherwise, weigh how much
+rework they add up to and put the choice to the user as a numbered choice, as
+[shared/choices.md](../shared/choices.md) sets out:
+
+- **Hand back** - the rework is substantial enough for the author to do it.
+  Hold every fundamental problem as step 5 holds an author's finding, and run
+  the `review-pr` skill ([review-pr/SKILL.md](../review-pr/SKILL.md)) to post
+  them. Its submit step hands the PR back to the author, and the pass ends
+  there, with no sections.
+- **Fix first** - work them as [shared/findings.md](../shared/findings.md) sets
+  out before sectioning, holding any only the author can settle as step 5 does.
+  Each fix counts among the fixes of the section its files fall in, for that
+  section's documentation.
+
+### 3. Section the branch, then summarise it
 
 Work out the areas and their sizes as the `orient` skill
 ([orient/SKILL.md](../orient/SKILL.md)) does, without writing its output. Split
@@ -79,13 +104,13 @@ than from what the net diff reads: lockfiles, generated files, renames and
 deletions all count. Before the first section, check that the files across the
 sections add up to the list's count, and say the count with the order.
 
-### 3. Review the section
+### 4. Review the section
 
 Run every pass in [shared/review-passes.md](../shared/review-passes.md) over the section's
 files, checks included. A finding in another section's files waits for that
 section's turn. One outside the scope is an aside for the report.
 
-### 4. Work its findings
+### 5. Work its findings
 
 Take the section's findings one at a time, as
 [shared/findings.md](../shared/findings.md) sets out.
@@ -102,7 +127,7 @@ than a final pass's to fix. Say so when it comes up, then hold it with its file,
 lines and point in a line. The comment's wording is agreed later, in
 `review-pr`.
 
-### 5. Look through the section
+### 6. Look through the section
 
 Once a section's last finding is ticked off, commit its held stylistic fixes as
 one commit, following the `commit` skill ([commit/SKILL.md](../commit/SKILL.md)).
@@ -111,10 +136,10 @@ Then list the code the section covered, so the user can look through it for anyt
 file, with the line ranges in it where the section holds only part of the
 file. Mark the files this section finishes, so the user knows which to tick
 off on GitHub. Wait until they say they're done with it. A problem they raise
-becomes a further finding of the same section, worked as step 4 sets out, and
+becomes a further finding of the same section, worked as step 5 sets out, and
 the list comes round again once it's ticked off.
 
-### 6. Document the section's fixes
+### 7. Document the section's fixes
 
 Every fix the section made is a mistake nothing steered the branch's author
 away from. Run the `documentation` skill ([documentation/SKILL.md](../documentation/SKILL.md))
@@ -127,7 +152,7 @@ time and the next final pass has less to fix.
 - Leave its edits uncommitted beside the section's held fixes, and stay on them
   until the user says they're done, as for a finding.
 
-### 7. Next section, back to 3
+### 8. Next section, back to 4
 
 Offer to run the `update-pr` skill ([update-pr/SKILL.md](../update-pr/SKILL.md)),
 which commits the section's doc edits and any fixes still held before it
@@ -135,7 +160,7 @@ pushes, so a yes commits them now rather than at the report. Wait for the answer
 on as the **Sections** in
 [shared/reading-order.md](../shared/reading-order.md) set out.
 
-### 8. Report
+### 9. Report
 
 - Confirm that a section finished every file in the list, naming any it didn't.
 - Offer the held stylistic fixes as one commit, if any are still waiting.
