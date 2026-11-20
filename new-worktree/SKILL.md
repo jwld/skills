@@ -1,0 +1,112 @@
+---
+name: new-worktree
+description: >-
+  Opens a fresh git worktree in a new Cursor window, so each window's chats
+  and review bar cover only its own work; also lists and removes worktrees.
+  Use when the user wants a new worktree or window, to work on several things
+  at once, or is done with a worktree.
+---
+
+# New worktree
+
+One Cursor window per worktree. A worktree is a second checkout of the same
+repo, sharing one `.git`. The review bar collects the edits made by the chats
+in its own window, so a worktree's work happens in a chat in its window, with
+git run from inside it.
+
+Work out which the user wants: **Start** (the default), **List** or
+**Remove**.
+
+## Start
+
+Start needs nothing from the user. The work is decided in the new window.
+
+```
+- [ ] 1. Add the worktree
+- [ ] 2. Set it up
+- [ ] 3. Open the window
+```
+
+### 1. Add the worktree
+
+The main checkout is the first path `git worktree list` prints. Worktrees sit
+beside it as numbered slots, `<parent>/<repo>.worktrees/<repo>-<n>` with the
+lowest free `<n>`: the PropertyWerks repo at `~/GitHub/pwerks/propertywerks`
+gets `~/GitHub/pwerks/propertywerks.worktrees/propertywerks-1`.
+
+`git fetch origin`, then from the main checkout:
+
+```bash
+# Fresh work: no branch yet. The commit skill names one at the first commit.
+git worktree add --detach <path> origin/<default>
+
+# An existing branch the user named. One only on origin gets a local branch tracking it.
+git worktree add <path> <branch>
+```
+
+`<default>` is the default branch, as
+[shared/base-branch.md](../shared/base-branch.md) sets out. When git refuses a
+branch as "already used by worktree", say which worktree holds it: its window
+may already be open.
+
+Done when `git worktree list` shows `<path>`.
+
+### 2. Set it up
+
+A worktree starts with tracked files only: no `node_modules`, no `.env` files.
+
+- **The repo has `.cursor/worktrees.json`** - Cursor runs it only for
+  worktrees it creates itself, so run it here. Take `setup-worktree-unix`,
+  else `setup-worktree`: an array of commands, or a script path relative to
+  the JSON file. Run them in the worktree with `ROOT_WORKTREE_PATH` set to the
+  main checkout. That is the whole step.
+- **Otherwise** - copy the ignored env files across from the main checkout,
+  then install dependencies with the package manager whose lockfile sits at
+  the root, frozen to that lockfile (`pnpm install --frozen-lockfile`,
+  `npm ci`), plus any fresh-clone setup the repo's `AGENTS.md` names.
+
+```bash
+cd <main checkout>
+git ls-files -oi --exclude-standard -- '*.env*' ':!:*node_modules*' | while read -r f; do
+  mkdir -p "<path>/$(dirname "$f")" && cp "$f" "<path>/$f"
+done
+```
+
+When a setup command fails, stop and show its error. The worktree stays, for
+the user to decide on.
+
+Done when every setup command exits 0.
+
+### 3. Open the window
+
+`cursor -n --classic <path>` opens it in a new editor window; `--classic`
+keeps it out of the Agents Window.
+
+Reply with the path, what it's checked out on, what setup ran, and that the
+window is open.
+
+## List
+
+`git worktree list`, then one line for each worktree other than the main
+checkout: its path, its branch (or detached), whether it has uncommitted
+changes (`git -C <path> status --short`), and a branch's open PR URL if it
+has one (`gh pr list --head <branch> --json url --jq '.[0].url'`).
+
+## Remove
+
+Run from the main checkout, for the worktree the user is done with:
+
+1. `git worktree remove <path>`. Ignored files (`node_modules`, the env
+   copies) don't block it.
+2. When git refuses over modified or untracked files, show
+   `git -C <path> status --short` and put the choice as
+   [shared/choices.md](../shared/choices.md) sets out: commit them with the
+   `commit` skill ([commit/SKILL.md](../commit/SKILL.md)) and remove, or
+   discard them with `git worktree remove --force <path>`.
+3. A worktree folder deleted by hand leaves a stale entry, which
+   `git worktree prune` clears.
+
+Removing a worktree keeps its branch and commits. Reply with what was removed,
+that any branch is still there (the `merged-branches` skill clears it once its
+PR merges, [merged-branches/SKILL.md](../merged-branches/SKILL.md)), and to
+close that worktree's window, which now points at a missing folder.
