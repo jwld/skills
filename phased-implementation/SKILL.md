@@ -30,7 +30,7 @@ wants is already selected, and on a `Task` subagent only when it isn't.
 - [ ] 4. Implement phase on the selected model
 - [ ] 5. Stop for review
 - [ ] 6. Commit on go ahead, then start the next phase
-- [ ] 7. Wrap up - sync the issue
+- [ ] 7. Wrap up - ask about deep dive and documentation, then sync the issue
 ```
 
 ### 1. Plan
@@ -173,7 +173,12 @@ The wrap-up gate is that every phase is committed. Stay on step 6 while a
 phase is only in the working tree.
 
 Once the last phase is committed, however the commit was asked for (a bare
-`/commit` included), follow the `update-issue` skill
-([update-issue/SKILL.md](../update-issue/SKILL.md)) in the same turn, without asking,
-so the issue's plan matches how the work turned out. Skip this when there is
-no issue. Then say the work is done and whether the issue changed.
+`/commit` included), say the phases are done and end the turn by asking
+whether they want to run `/deep-dive` then `/documentation`, in that order.
+They run each one themselves. Once each finishes, stop and ask before the
+next. Nothing opens or updates a PR until both have run or the user says no.
+
+Then follow the `update-issue` skill
+([update-issue/SKILL.md](../update-issue/SKILL.md)) without asking, so the
+issue's plan matches how the work turned out. Skip this when there is no
+issue. Then say the work is done and whether the issue changed.
