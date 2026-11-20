@@ -74,7 +74,7 @@ Slash-only skills are marked `/`.
 
 | Area | Skills |
 | --- | --- |
-| Git and branches | `commit`, `push`, `backup-work`, `rebase`, `merged-branches`, `new-worktree`, `/land-first`, `/squash` |
+| Git and branches | `commit`, `push`, `backup-work`, `rebase`, `merged-branches`, `new-worktree`, `teardown-worktree`, `/land-first`, `/squash` |
 | Issues and PRs | `open-issue`, `update-issue`, `open-pr`, `update-pr`, `write-up-branch`, `meeting-notes`, `address-review`, `/review-pr`, `/changes` |
 | Reading a finished branch | `/orient`, `/walkthrough`, `/deep-dive`, `/final-pass`, `/review-file` |
 | Code and docs quality | `tidy`, `test`, `review-comments`, `review-docs`, `adr`, `/documentation`, `/pattern` |

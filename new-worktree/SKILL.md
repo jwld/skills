@@ -2,9 +2,9 @@
 name: new-worktree
 description: >-
   Opens a fresh git worktree in a new Cursor window, so each window's chats
-  and review bar cover only its own work; also lists and removes worktrees.
-  Use when the user wants a new worktree or window, to work on several things
-  at once, or is done with a worktree.
+  and review bar cover only its own work; also lists worktrees. Use when the
+  user wants a new worktree or window, to work on several things at once, or
+  to see their worktrees.
 ---
 
 # New worktree
@@ -14,8 +14,7 @@ repo, sharing one `.git`. The review bar collects the edits made by the chats
 in its own window, so a worktree's work happens in a chat in its window, with
 git run from inside it.
 
-Work out which the user wants: **Start** (the default), **List** or
-**Remove**.
+Work out which the user wants: **Start** (the default) or **List**.
 
 ## Start
 
@@ -118,21 +117,7 @@ checkout: its path, its branch (or detached), whether it has uncommitted
 changes (`git -C <path> status --short`), and a branch's open PR URL if it
 has one (`gh pr list --head <branch> --json url --jq '.[0].url'`).
 
-## Remove
+## Tear down
 
-Run from the main checkout, for the worktree the user is done with:
-
-1. `git worktree remove <path>`. Ignored files (`node_modules`, the env
-   copies) don't block it.
-2. When git refuses over modified or untracked files, show
-   `git -C <path> status --short` and put the choice as
-   [shared/choices.md](../shared/choices.md) sets out: commit them with the
-   `commit` skill ([commit/SKILL.md](../commit/SKILL.md)) and remove, or
-   discard them with `git worktree remove --force <path>`.
-3. A worktree folder deleted by hand leaves a stale entry, which
-   `git worktree prune` clears.
-
-Removing a worktree keeps its branch and commits. Reply with what was removed,
-that any branch is still there (the `merged-branches` skill clears it once its
-PR merges, [merged-branches/SKILL.md](../merged-branches/SKILL.md)), and to
-close that worktree's window, which now points at a missing folder.
+The `teardown-worktree` skill removes a worktree once its PR has merged
+([teardown-worktree/SKILL.md](../teardown-worktree/SKILL.md)).
